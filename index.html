@@ -1,0 +1,3330 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+      <title>Garden of Eden</title>
+   </head>
+   
+   <body>
+      <div class="screen">
+         
+         <div class="gamescreen" id="garden">
+            
+            <div class="potarray">
+               <div class="pot" id="pot1" onclick="plantSeed(1)"></div>
+               <div class="pot" id="pot2" onclick="plantSeed(2)"></div>
+               <div class="pot" id="pot3" onclick="plantSeed(3)"></div>
+               <div class="pot" id="pot4" onclick="plantSeed(4)"></div>
+            </div>   
+         
+            <div class="seedarray" id="seedarray">
+               <div class="seedpacket" onclick="selectPlant('tomato')" id="sp1">
+                  <div class="seedicon tom"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed1">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Tomatos</span><br>
+                  <span class="seedtext" id="plant1">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('orange')" id="sp2">
+                  <div class="seedicon ora"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed2">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Oranges</span><br>
+                  <span class="seedtext" id="plant2">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('melon')" id="sp3">
+                  <div class="seedicon mel"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed3">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Melons</span><br>
+                  <span class="seedtext" id="plant3">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('wheat')" id="sp4">
+                  <div class="seedicon whe"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed4">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Wheat</span><br>
+                  <span class="seedtext" id="plant4">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('grapes')" id="sp5">
+                  <div class="seedicon gra"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed5">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Grapes</span><br>
+                  <span class="seedtext" id="plant5">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('pine')" id="sp6">
+                  <div class="seedicon pin"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed6">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Pineapple</span><br>
+                  <span class="seedtext" id="plant6">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('bean')" id="sp7">
+                  <div class="seedicon bea"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed7">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Beans</span><br>
+                  <span class="seedtext" id="plant7">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('taba')" id="sp8">
+                  <div class="seedicon tab"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed8">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Tabacco</span><br>
+                  <span class="seedtext" id="plant8">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('cherry')" id="sp9">
+                  <div class="seedicon che"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed9">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Cherry</span><br>
+                  <span class="seedtext" id="plant9">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('star')" id="sp10">
+                  <div class="seedicon sta"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed10">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Starfruit</span><br>
+                  <span class="seedtext" id="plant10">0</span>
+               </div>
+               <div class="seedpacket" onclick="selectPlant('gold')" id="sp1E">
+                  <div class="seedicon gol"></div>
+                  <span style="text-decoration: underline; font-weight: bold;">Seeds</span><br>
+                  <span class="seedtext" id="seed1E">0</span>
+                  <br>
+                  <span style="text-decoration: underline; font-weight: bold;">Golden Apple</span><br>
+                  <span class="seedtext" id="plant1E">0</span>
+               </div>
+            </div>
+
+            <div class="gostore" onclick="gameNav('store')">Go to Store</div>
+            <div class="gostore" style="right: 20%;" onclick="gameNav('seeds')">Buy Seeds</div>
+            <div class="gostore" style="right: 38%;" id="chall" onclick="gameNav('gapple')">Challenge</div>
+            
+            <div class="sellarray">
+               <div class="gardenMoney"><span style="margin-left: 15px; margin-right: 15px;" id="gardenmoney">$0</span></div>
+               <div class="sellplants" onclick="sellPlants();"><span style="margin-left: 15px; margin-right: 15px;">Sell Plants</span></div>
+            </div>
+         </div>
+         
+         <div class="gamescreen" id="store">
+            <div class="itemcont">
+               <div class="storecolumn" onclick="buyStoreItem(1)">
+                  <br>
+                  <span style="font-size: 5vh; font-weight: bolder;">Growth</span><br>
+                  Tier: <span id="tier1">I</span><br>
+                  Cost: <span id="pri1">0</span><br>
+                  <br>
+                  Description:<br>
+                  <span style="font-size: 2.5vh;">
+                     Growth increases the speed of plant growth
+                  </span>
+                  <br><br>
+                  <span style="font-size: 3vh;">Click to buy item</span>
+               </div>
+               <div class="storecolumn" onclick="buyStoreItem(2)">
+                  <br>
+                  <span style="font-size: 5vh; font-weight: bolder;">Haggle</span><br>
+                  Tier: <span id="tier2">I</span><br>
+                  Cost: <span id="pri2">0</span><br>
+                  <br>
+                  Description:<br>
+                  <span style="font-size: 2.5vh;">
+                     Haggle increases the amount of money you gain when selling plants
+                  </span>
+                  <br><br>
+                  <span style="font-size: 3vh;">Click to buy item</span>
+               </div>
+               <div class="storecolumn" onclick="buyStoreItem(3)">
+                  <br>
+                  <span style="font-size: 5vh; font-weight: bolder;">Gold Leaf</span><br>
+                  Tier: <span id="tier3">I</span><br>
+                  Cost: <span id="pri3">0</span><br>
+                  <br>
+                  Description:<br>
+                  <span style="font-size: 2.5vh;">
+                     Gold Leaf has a chance to give you money every time a plant grows
+                  </span>
+                  <br><br>
+                  <span style="font-size: 3vh;">Click to buy item</span>
+               </div>
+               <div class="storecolumn" onclick="buyStoreItem(4)">
+                  <br>
+                  <span style="font-size: 5vh; font-weight: bolder;">Seed</span><br>
+                  Tier: <span id="tier4">I</span><br>
+                  Cost: <span id="pri4">0</span><br>
+                  <br>
+                  Description:<br>
+                  <span style="font-size: 2.5vh;">
+                     Gain a new seed type
+                  </span>
+                  <br><br>
+                  <span style="font-size: 3vh; vertical-align: bottom;">Click to buy item</span>
+               </div>
+            </div>
+            
+            <div class="gostore" onclick="gameNav('garden')" id="gacEndBtn">Go to Garden</div>
+            
+            <div class="sellarray">
+               <div class="gardenMoney"><span style="margin-left: 15px; margin-right: 15px;" id="shopmoney">$0</span></div>
+            </div>
+         </div>
+         
+         <div class="gamescreen" id="seeds">
+            <div class="seedcont">
+               <div class="seedColumn">
+                  <div class="buySeed" id="buys1" onclick="buySeedPacket('tomato')">
+                     <button class="bsIcon tom"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Tomato</span><br>
+                        Cost: 1
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys2" onclick="buySeedPacket('orange')">
+                     <button class="bsIcon ora"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Orange</span><br>
+                        Cost: 7
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys3" onclick="buySeedPacket('melon')">
+                     <button class="bsIcon mel"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Melon</span><br>
+                        Cost: 15
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys4" onclick="buySeedPacket('wheat')">
+                     <button class="bsIcon whe"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Wheat</span><br>
+                        Cost: 25
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys5" onclick="buySeedPacket('grapes')">
+                     <button class="bsIcon gra"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Grapes</span><br>
+                        Cost: 65
+                     </p>
+                  </div>
+               </div>
+               <div class="seedColumn">
+                  <div class="buySeed" id="buys6" onclick="buySeedPacket('pine')">
+                     <button class="bsIcon pin"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Pineapple</span><br>
+                        Cost: 110
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys7" onclick="buySeedPacket('bean')">
+                     <button class="bsIcon bea"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Beans</span><br>
+                        Cost: 210
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys8" onclick="buySeedPacket('taba')">
+                     <button class="bsIcon tab"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Tabacco</span><br>
+                        Cost: 350
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys9" onclick="buySeedPacket('cherry')">
+                     <button class="bsIcon che"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Cherry</span><br>
+                        Cost: 500
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys10" onclick="buySeedPacket('star')">
+                     <button class="bsIcon sta"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Starfruit</span><br>
+                        Cost: 1000
+                     </p>
+                  </div>
+                  <div class="buySeed" id="buys1E" onclick="buySeedPacket('gold')">
+                     <button class="bsIcon gol"></button>
+                     <p class="bsTxt">
+                        <span style="font-weight: bold; text-decoration: underline;">Golden Apple</span><br>
+                        Cost: 3000
+                     </p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="gostore" onclick="gameNav('garden')">Go to Garden</div>
+            
+            <div class="sellarray">
+               <div class="gardenMoney"><span style="margin-left: 15px; margin-right: 15px;" id="seedmoney">$0</span></div>
+            </div>
+            
+         </div>
+         
+         <div class="gamescreen" id="gapple">
+            
+            <div class="gacCont">
+               <div class="gacPanel">
+                  <br>
+                  <p style="text-align: center;"><span class="gacTitle">Challenge</span></p><br>
+                  <br>
+                  <span class="gacDesc">
+                     Challenge mode is a special mode that features harder gameplay that has boundaries, some of these boundaries are :<br>
+                     <br>
+                     - Only tomatoes can be planted<br>
+                     - It must be completed in a thirty-five minute window<br>
+                     - You must buy everything from the shop to complete the challenge<br>
+                     <br>
+                     Opon beating this challenge you will recieve the <span style="color: #ffa20d;">Golden Apple</span> seed packet.
+                     <br><br>
+                  </span>
+                  
+                  <div class="gacBtn gbA" onclick="startGoldenAppleChallenge()" id="gbT">Start</div>
+               </div>
+               <div class="gostore" onclick="gameNav('garden')">Go to Garden</div>
+            </div>
+         </div>
+         
+         <div class="gamescreen" id="gacEndPopup">
+            
+            <div class="gacCont">
+               <div class="gacPanel">
+                  <br>
+                  <p style="text-align: center;"><span class="gacTitle">Completion</span></p><br>
+                  <br>
+                  <span class="gacDesc">
+                     You've completed the <span style="color: #ffa20d;">Golden Apple Challenge</span>,<br>
+                     the final challenge of this build.<br>
+                     <br>
+                     You have earned the <span style="color: #ffa20d;">Golden Apple</span><br>
+                     <br>
+                     Note from the developer:<br>
+                     This is the end of the game, you can keep playing if you'd like but there will be no more content in this build.<br>
+                     More challenges will be added in the future along with more seeds, upgrades, and achievements so look out for those.
+                  </span>
+                  
+               </div>
+               <div class="gostore" onclick="gameNav('goldenEnd')">Back to Game</div>
+            </div>
+         </div>
+         <div class="gamescreen" id="gacFailPopup">
+            
+            <div class="gacCont">
+               <div class="gacPanel">
+                  <br>
+                  <p style="text-align: center;"><span class="gacTitle">Failure</span></p><br>
+                  <br>
+                  <span class="gacDesc">
+                     You've failed the <span style="color: #ffa20d;">Golden Apple Challenge</span>,<br>
+                     the final challenge of this build.<br>
+                     <br>
+                     You will have to make a second attempt to finish this challenge<br>
+                     <br>
+                     Note from the developer:<br>
+                     Skill issue lmao
+                  </span>
+                  
+               </div>
+               <div class="gostore" onclick="goldenAppleEnd('fail');">End</div>
+            </div>
+         </div>
+         
+         
+         <div class="pausedarkbg" id="pausebg"></div>
+         <div class="pausescreen" id="pause">
+            <p class="pausetitle">Paused</p>
+            <button class="pausebtn" onclick="usePauseItem('resume')">Continue</button><br>
+            <button class="pausebtn" onclick="usePauseItem('save')">Save</button><br>
+            <button class="pausebtn" onclick="usePauseItem('opt')">Options</button><br>
+            <button class="pausebtn" onclick="usePauseItem('achi')">Achievements</button><br>
+            <button class="pausebtn" onclick="usePauseItem('exit')">Exit</button>
+         </div>
+         
+         
+         <div class="gamescreen mainmenu" id="mm">
+            <p class="mmTitle" id="mmt">Garden of Eden</p>
+            <button class="mainmenuBtn" onclick="useMenuItem('newgame')">New Game</button><br>
+            <button class="mainmenuBtn" onclick="useMenuItem('continue')">Continue</button><br>
+            <button class="mainmenuBtn" onclick="useMenuItem('options')">Options</button><br>
+            <button class="mainmenuBtn" onclick="useMenuItem('medals')">Achievements</button>
+         </div>
+         
+         <div class="gamescreen" id="optm">
+            <p class="mmTitle" id="mmt">Options (WIP)</p>
+            <button onclick="useMenuItem('back')">Back to menu</button>
+         </div>
+         
+         <div class="gamescreen" id="am">
+            <div class="achibox">
+               <div class="achipanel">
+                  <br>
+                  <p class="achitier">- Tier I -</p>
+                  <div style="display: flex;">
+                     <button class="achiicon" id="ac1"><p class="aitxt" id="tierI1">?</p><div class="atool">Start the Garden of Eden</div></button>
+                     <button class="achiicon" id="ac2"><p class="aitxt" id="tierI2">?</p><div class="atool">Harvest your first plant</div></button>
+                     <button class="achiicon" id="ac3"><p class="aitxt" id="tierI3">?</p><div class="atool">Harvest 10 Plants</div></button>
+                     <button class="achiicon" id="ac4"><p class="aitxt" id="tierI4">?</p><div class="atool">Attempt to harvest a plant while it's still growing</div></button>
+                  </div>
+                  <p class="achitier">- Tier II -</p>
+                  <div style="display: flex;">
+                     <button class="achiicon" id="ac5"><p class="aitxt" id="tierII1">?</p><div class="atool">Fail a Challenge<br><br>Skill issue btw</div></button>
+                     <button class="achiicon" id="ac6"><p class="aitxt" id="tierII2">?</p><div class="atool">Let a plant wilt for too long</div></button>
+                     <button class="achiicon" id="ac7"><p class="aitxt" id="tierII3">?</p><div class="atool"><i>BEANS</i>.</div></button>
+                     <button class="achiicon" id="ac8"><p class="aitxt" id="tierII4">?</p><div class="atool">Harvest a plant with the gold leaf effect</div></button>
+                  </div>
+                  <p class="achitier">- Tier III -</p>
+                  <div style="display: flex;">
+                     <button class="achiicon" id="ac9"><p class="aitxt" id="tierIII1">?</p><div class="atool">Max out haggle</div></button>
+                     <button class="achiicon" id="ac10"><p class="aitxt" id="tierIII2">?</p><div class="atool">Harvest a plant as fast as possible</div></button>
+                     <button class="achiicon" id="ac11"><p class="aitxt" id="tierIII3">?</p><div class="atool">Finish a challenge with only a few seconds remaining</div></button>
+                     <button class="achiicon" id="ac12" onclick="interaction34()"><p class="aitxt" id="tierIII4">?</p><div class="atool">Click this achievement</div></button>
+                  </div>
+                  <p class="achitier">- Tier IV -</p>
+                  <div style="display: flex;">
+                     <button class="achiicon" id="ac13"><p class="aitxt" id="tierIV1">?</p><div class="atool">Get tier X growth</div></button>
+                     <button class="achiicon" id="ac14"><p class="aitxt" id="tierIV2">?</p><div class="atool">Max out goldleaf</div></button>
+                     <button class="achiicon" id="ac15"><p class="aitxt" id="tierIV3">?</p><div class="atool">Obtain the golden apple; the most prized fruit.</div></button>
+                     <button class="achiicon" id="ac16"><p class="aitxt" id="tierIV4">?</p><div class="atool">Sell a plant for a mountain of cash</div></button>
+                  </div>
+                  <p class="achitier">- Tier V -</p>
+                  <div style="display: flex;">
+                     <button class="achiicon" id="ac17"><p class="aitxt" id="tierV1">?</p><div class="atool">Obtain every seed packet</div></button>
+                     <button class="achiicon" id="ac18"><p class="aitxt" id="tierV2">?</p><div class="atool">Max out growth</div></button>
+                     <button class="achiicon" id="ac19"><p class="aitxt" id="tierV3">?</p><div class="atool">Finish Eden, every single thing has been done now. It's time to rest</div></button>
+                     <button class="achiicon" id="ac20"><p class="aitxt" id="tierV4">?</p><div class="atool">Success! You've beaten the game in under thirty minutes</div></button>
+                  </div>
+                  
+               </div>
+               <p class="achititle">Achievements</p>
+               <button class="achibacktomenu" onclick="useMenuItem('back')">Back</button>
+            </div>
+         </div>
+         
+         <div class="clock" id="time">35:00</div>
+         
+         <div class="popupNotify" id="notify">
+            Notify: uncalled
+         </div>
+      </div>
+      
+      <div class="splash" id="splash">
+         Loading . . .
+      </div>
+      
+      <div class="dbpanel" id="db">
+         <p style="margin: 1%;">
+            <span style="text-decoration: underline;">Debug Panel</span><br>
+            <span onclick="debugInter('al1')">All Seeds</span><br>
+            <span onclick="debugInter('al2')">All Achievements</span><br>
+            <span onclick="debugInter('al3')">[int] Money +1</span><br>
+            <span onclick="debugInter('al4')">[int] Money *2</span><br>
+            <span onclick="debugInter('al4')">[int] Max Money</span><br>
+            <span onclick="debugInter('al6')">All Seeds +1 </span><br>
+            <br>
+            <span style="text-decoration: underline;">xX_Speed-Hackz_Xx</span><br>
+            <span onclick="debugInter('sp1')">Max Growth</span><br>
+            <span onclick="debugInter('sp2')">Instant growing</span><br>
+            <br>
+            <span style="text-decoration: underline;">A Requirements</span><br>
+            <span onclick="debugInter('ac1')">[int] Plants Harvested +1</span><br>
+            <span onclick="debugInter('ac2')">[boolean] Killed plant true</span><br>
+            <span onclick="debugInter('ac3')">[int] Failed Challenges +1</span><br>
+            <span onclick="debugInter('ac4')">[boolean] Plant died true</span><br>
+            <span onclick="debugInter('ac5')">[int] Goldleaf effects +1</span><br>
+            <span onclick="debugInter('ac6')">[boolean] Fast harvest true</span><br>
+            <span onclick="debugInter('ac7')">[boolean] On time true</span><br>
+            <span onclick="debugInter('ac8')">[boolean] achi34 true</span><br>
+            <span onclick="debugInter('ac9')">[boolean] plant sold great true</span><br>
+         </p>
+      </div>
+   </body>
+   
+   <style>
+      .dbpanel {
+         width: 20%;
+         height: 55%;
+         overflow: scroll;
+         background-color: purple;
+         position: fixed;
+         bottom: 2%;
+         right: 2%;
+         color: white;
+      }
+      
+      
+      .pausescreen {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         border: none;
+         text-align: center;
+      }
+      .pausedarkbg {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         border: none;
+         background-color: black;
+         opacity: 0.4;
+      }
+      
+      .pausetitle {
+         font-size: 20vh;
+         margin: 2%;
+         color: #fb00ff;
+         text-shadow: 0px 1vh #940b96;
+      }
+      .pausebtn {
+         width: 15%;
+         height: 7%;
+         margin: 0.5%;
+         background-color: white;
+         border: black 0.35vw solid;
+         border-radius: 10000px;
+         font-size: 3.5vh;
+         cursor: pointer;
+         transition: 0.2s ease-in-out;
+      }
+      .pausebtn:hover {
+         color: #fb00ff;
+         border: #fb00ff 0.35vw solid;
+      }
+      
+      
+      html {
+         font-family: "Poppins", sans-serif;
+         
+         user-select: none;
+         -ms-user-select: none;
+         -moz-user-select: none;
+         -webkit-user-select: none;
+      }
+      
+      
+      .screen {
+         width: 100%;
+         height: 100%;
+         margin: 0;
+         padding: 0;
+         position: fixed;
+         top: 0;
+         left: 0;
+      }
+      
+      .gamescreen {
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         border: none;
+         background-size: cover;
+         background-image: url('images/bg.jpg');
+      }
+      
+      .potarray {
+         width: 100%;
+         height: 70%;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         display: flex;
+         justify-content: center;
+      }
+      .pot {
+         width: 20%;
+         height: 80%;
+         margin-left: 5%;
+         margin-right: 5%;
+         background-size: cover;
+         background-image: url('images/pot_states/pot.png');
+         margin-top: 7%;
+         cursor: pointer;
+         transition: 0.05s ease-in-out;
+      }
+      
+      .gostore {
+         position: fixed;
+         bottom: 2%;
+         right: 2%;
+         margin: 10px;
+         font-size: 4vh;
+         background-color: white;
+         width: 15%;
+         height: 10%;
+         border-radius: 1000px;
+         border: 0.35vw solid black;
+         text-align: right;
+         transition: 0.2s ease-in-out;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+      }
+      .gostore:hover {
+         border: 4px solid orange;
+         color: orange;
+      }
+      
+      .sellarray {
+         width: 40%;
+         height: 10%;
+         bottom: 20px;
+         left: 20px;
+         position: fixed;
+         display: flex;
+         align-items: center;
+      }
+      .gardenMoney {
+         font-size: 4vh;
+         color: black;
+         margin: 0;
+         width: auto;
+         height: 80%;
+         background-color: white;
+         border-radius: 1000px;
+         border: 0.35vw solid black;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-right: 15px;
+         transition: 0.2s ease-in-out;
+      }
+      .gardenMoney:hover {
+         color: green;
+      }
+      .sellplants {
+         font-size: 4vh;
+         color: black;
+         margin: 0;
+         width: auto;
+         height: 80%;
+         background-color: white;
+         border-radius: 1000px;
+         border: 0.35vw solid black;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+         transition: 0.2s ease-in-out;
+      }
+      .sellplants:hover {
+         border: 4px solid orange;
+         color: orange;
+      }
+      
+      .seedarray {
+         width: 90%;
+         height: 250px;
+         position: fixed;
+         margin: 15px;
+         top: 0;
+         left: 0;
+         display: flex;
+         align-items: center;
+         justify-content: left;
+         background-color: white;
+         border: 7px solid black;
+         border-radius: 15px;
+         overflow: hidden;
+         overflow-x: scroll;
+      }
+      
+      .seedpacket {
+         width: 130px;
+         height: 85%;
+         background-color: white;
+         margin: 5px;
+         border-radius: 15px;
+         text-align: center;
+         font-size: 1.75vh;
+         cursor: pointer;
+         border: black 7px solid;
+         transition: 0.2s ease-in-out;
+      }
+      
+      .seedicon {
+         width: 80%;
+         aspect-ratio: 1 / 1;
+         margin: 10%;
+         margin-bottom: 0;
+         border-radius: 10px;
+         background-size: cover;
+      }
+      .seedtext {
+         margin: 15px;
+         font-size: 2vh;
+      }
+      
+      .tom {background-image: url('images/icons/tomato.png');}
+      .ora {background-image: url('images/icons/orange.png');}
+      .mel {background-image: url('images/icons/melon.png');}
+      .whe {background-image: url('images/icons/wheat.png');}
+      .gra {background-image: url('images/icons/grapes.png');}
+      .pin {background-image: url('images/icons/pineapple.png');}
+      .gol {background-image: url('images/icons/goldenapple.png');}
+      
+      .bea {background-image: url('images/icons/bean.png');}
+      .tab {background-image: url('images/icons/tabacco.png');}
+      .che {background-image: url('images/icons/cherry.png');}
+      .sta {background-image: url('images/icons/starfruit.png');}
+      
+      /*///////STORE///////*/
+      .itemcont {
+         width: 80%;
+         height: 80%;
+         position: fixed;
+         top: 10%;
+         left: 10%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      
+      .storecolumn {
+         width: 25%;
+         height: 90%;
+         background-color: white;
+         margin: 1%;
+         border: 6px solid black;
+         border-radius: 20px;
+         cursor: pointer;
+         transition: 0.2s ease-in-out;
+         font-size: 4vh;
+         text-align: center;
+         padding: 10px;
+      }
+      .storecolumn:hover {
+         border: 6px solid orange;
+         color: orange;
+      }
+      
+      
+      
+      .seedcont {
+         width: 80%;
+         height: 90%;
+         position: fixed;
+         top: 10%;
+         left: 10%;
+      }
+      .seedColumn {
+         width: 100%;
+         height: 50%;
+         display: flex;
+         justify-content: center;
+      }
+      
+      .buySeed {
+         width: 13%;
+         height: 70%;
+         background-color: white;
+         margin: 1%;
+         border-radius: 15px;
+         border: 7px solid black;
+         text-align: center;
+         transition: 0.2s ease-in-out;
+         cursor: pointer;
+      }
+      .buySeed:hover {
+         border: 7px solid orange;
+         color: orange;
+      }
+      
+      .bsIcon {
+         height: 45%;
+         aspect-ratio: 1 / 1;
+         background-color: white;
+         background-size: cover;
+         margin-top: 10%;
+         border: none;
+         cursor: pointer;
+      }
+      .bsTxt {
+         font-size: 1.3vw;
+         text-align: center;
+         margin: 0.3vh;
+      }
+      
+      
+      /*GOLDEN APPLE CHALLENGE*/
+      
+      .gacPanel {
+         width: 30%;
+         height: 85%;
+         background-color: white;
+         border: 6px solid black;
+         border-radius: 15px;
+         font-size: 1.2vw;
+         padding: 20px;
+      }
+      .gacCont {
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         left: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      
+      .gacTitle {
+         font-size: 3.5vw;
+         text-align: center;
+      }
+      .gacDesc {
+         text-align: left;
+      }
+      
+      .gacBtn {
+         margin: 10px;
+         font-size: 4vh;
+         background-color: white;
+         width: 15%;
+         height: 10%;
+         border-radius: 1000px;
+         border: 4px solid black;
+         text-align: right;
+         transition: 0.2s ease-in-out;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+      }
+      .gacBtn:hover {border: 4px solid orange; color: orange;}
+      
+      .gbA {
+         position: fixed;
+         bottom: 2%;
+         left: 0.5%;
+      }
+      .gbB {
+         position: fixed;
+         bottom: 2%;
+         left: 16.5%;
+      }
+      
+      
+      .clock {
+         position: fixed;
+         right: 20px;
+         top: 20px;
+         margin: 0;
+         font-weight: bolder;
+         text-decoration: underline;
+         background-color: red;
+         font-size: 5vh;
+         text-align: center;
+         width: 11%;
+         border-radius: 40px;
+         border: 4px solid black;
+      }
+      
+      /*Greeting*/
+      .blackground {
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         left: 0;
+         background-color: black;
+         opacity: 0.5;
+      }
+      .greetingCont {
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         left: 0;
+      }
+      .note {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .greetingsFromJS {
+         width: 60%;
+         height: 70%;
+         border: 10px solid black;
+         background-color: white;
+         border-radius: 30px;
+         font-size: 3.5vh;
+         text-align: left;
+         padding: 20px;
+      }
+      
+      .startGame {
+         width: 13%;
+         height: 7%;
+         position: fixed;
+         bottom: 2%;
+         left: 2%;
+         background-color: white;
+         border: 8px solid black;
+         border-radius: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 2vw;
+         cursor: pointer;
+         transition: 0.2s ease-in-out;
+      }
+      .startGame:hover {
+         border: 8px solid orange;
+         color: orange;
+      }
+      
+      
+      .popupNotify {
+         width: auto;
+         height: 5%;
+         background-color: white;
+         position: fixed;
+         top: 2%;
+         right: 2%;
+         border: 6px solid black;
+         padding-left: 20px;
+         padding-right: 20px;
+         display: flex;
+         align-items: center;
+         justify-content: right;
+         border-radius: 1000px;
+         animation-name: borderFlash;
+         animation-duration: 0.75s;
+         animation-iteration-count: infinite;
+         transition: 0.4s ease-in-out;
+         font-size: 3vh;
+      }
+      
+      @keyframes borderFlash {
+         0% {border: 6px solid red; color: red;}
+         25% {border: 6px solid blue; color: blue;}
+         50% {border: 6px solid lime; color: lime;}
+         75% {border: 6px solid orange; color: orange;}
+         100% {border: 6px solid black; color: black;}
+      }
+      
+      
+      .splash {
+         width: 100%;
+         height: 100%;
+         background-color: black;
+         top: 0;
+         left: 0;
+         position: fixed;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: white;
+         font-size: 4vw;
+      }
+      
+      .mainmenu {
+         text-align: left;
+         vertical-align: middle;
+      }
+      
+      .mainmenuBtn {
+         width: 15%;
+         height: 7%;
+         background-color: white;
+         border: 0.75vh solid black;
+         margin: 0.5%;
+         margin-left: 4%;
+         font-size: 3.5vh;
+         border-radius: 10000px;
+         cursor: pointer;
+         transition: 0.3s ease-in-out;
+      }
+      .mainmenuBtn:hover {
+         border: 0.75vh solid orange;
+         color: orange;
+      }
+      
+      .mmTitle {
+         font-size: 10vh;
+         margin: 4%;
+         text-shadow: -2px -5px white;
+      }
+      
+      
+      
+      .achibox {
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         left: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .achipanel {
+         width: 85%;
+         height: 80%;
+         background-color: white;
+         border: 1vh solid black;
+         overflow-y: scroll;
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+         text-align: center;
+      }
+      .achipanel::-webkit-scrollbar {
+          display: none;
+      }
+      
+      .achititle {
+         position: fixed;
+         top: 0;
+         font-size: 7vh;
+         text-align: center;
+         margin: 2%;
+         font-weight: bolder;
+         color: #ffc400;
+         text-shadow: 0px 5.75px #ff7300;
+      }
+      
+      .achiicon {
+         width: 20%;
+         aspect-ratio: 1 / 1;
+         background-color: red;
+         border: none;
+         margin: 2%;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .achiicon .atool {
+         width: 95%;
+         height: 70%;
+         background-color: black;
+         display: none;
+         color: white;
+         border-radius: 15px;
+         font-size: 3vh;
+      }
+      
+      .achiicon:hover .atool {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: 0.2s ease-in-out
+      }
+      
+      .aitxt {
+         position: absolute;
+         bottom: 0;
+         text-align: center;
+         font-size: 3vh;
+         margin: 2%;
+         color: white;
+         text-shadow: 0px 1px gray;
+      }
+      .achitier {
+         font-size: 4vh;
+         margin: 1%;
+         font-weight: bold;
+      }
+      
+      .achibacktomenu {
+         width: 20%;
+         height: 10%;
+         bottom: 2%;
+         left: 39.5%;
+         position: fixed;
+         background-color: white;
+         border-radius: 10000px;
+         border: 0.5vw black solid;
+         font-size: 2.2vw;
+         transition: 0.2s ease-in-out;
+         cursor: pointer;
+      }
+      .achibacktomenu:hover {
+         color: orange;
+         border: 0.5vw orange solid;
+      }
+   </style>
+   
+   <script>
+      
+      document.getElementById("splash").style.display = "none";
+      
+      ///////////////////////////////
+      //     MENUS
+      ///////////////////////////////
+      
+      // game
+      document.getElementById("store").style.display = "none";
+      document.getElementById("seeds").style.display = "none";
+      document.getElementById("gapple").style.display = "none";
+      
+      function gameNav(goto) {
+         if (goto == 'store') {
+            document.getElementById("garden").style.display = "none";
+            document.getElementById("store").style.display = "block";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+         }
+         else if (goto == 'garden') {
+            document.getElementById("garden").style.display = "block";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+         }
+         else if (goto == 'seeds') {
+            document.getElementById("garden").style.display = "none";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "block";
+            document.getElementById("gapple").style.display = "none";
+         }
+         else if (goto == 'gapple') {
+            document.getElementById("garden").style.display = "none";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "block";
+         }
+         else if (goto == 'goldenEnd') {
+            document.getElementById("garden").style.display = "block";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+            document.getElementById("gacEndPopup").style.display = "none";
+         }
+         else if (goto == 'goldenFail') {
+            document.getElementById("garden").style.display = "block";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+            document.getElementById("gacEndPopup").style.display = "none";
+            document.getElementById("gacFailPopup").style.display = "none";
+         }
+      }
+      
+      // main
+      
+      /////////////////////////////
+      //      GLOBAL
+      /////////////////////////////
+      
+      
+      /*
+      Plants:
+      - Tomato 1DA
+      - Orange 2DA
+      - Melon 3DA
+      - Wheat 4DA
+      - Grapes 5DA
+      - Pineapple 6DA
+      - Bean 7D
+      - Starfruit 8D
+      - Tabacco 9D
+      - Cherry 10 
+      
+      Extras:
+      - Golden Apple 1EDA
+      
+      Reference:
+      num - the plant's id
+      D - done
+      A - Added
+      E - Extra plant that can't be obtained normally
+      */
+      
+      const debug = false
+      const max$ = 999999
+      
+      var gameRunning = false
+      
+      // Seeds
+      var seed1 = 5
+      var seed2 = 5
+      var seed3 = 5
+      var seed4 = 5
+      var seed5 = 5
+      var seed6 = 5
+      var seed7 = 5
+      var seed8 = 5
+      var seed9 = 5
+      var seed10 = 5
+      
+      var seed1E = 5
+      // Plants
+      var plant1 = 0
+      var plant2 = 0
+      var plant3 = 0
+      var plant4 = 0
+      var plant5 = 0
+      var plant6 = 0
+      var plant7 = 0
+      var plant8 = 0
+      var plant9 = 0
+      var plant10 = 0
+      
+      var plant1E = 0
+      
+      var money = 0
+      
+      setInterval(function() {
+         if (gac == true) {
+            time--;
+            
+            var min = 0
+            var sec = 0
+            
+            var min0 = ''
+            var sec0 = ''
+            
+            sec = time;
+            
+            if (time >= 60) {
+               min = Math.floor(time / 60);
+               sec = sec - 60 * min;
+            }
+            
+            if (min < 10) {min0 = '0';}
+            else {min0 = '';}
+            
+            if (sec < 10) {sec0 = '0';}
+            else {sec0 == '';}
+            
+            
+            if (time <= 0) {
+               document.getElementById("time").innerHTML = "00:00";
+               goldenAppleEnd('fail');
+            }
+            else if (time > 0) {
+               document.getElementById("time").innerHTML = min0 + min + ":" + sec0 + sec;
+            }
+         }
+      }, 1000);
+      
+      ////////////////////////////////
+      //    GARDEN
+      ///////////////////////////////
+      
+      
+      var currentStuff = ''
+      
+      function selectPlant(x) {
+         if (x == 'tomato' && seed1 > 0 && currentStuff != 'tomato') {currentStuff = 'tomato';}
+         else if (x == 'orange' && seed2 > 0 && currentStuff != 'orange') {currentStuff = 'orange';}
+         else if (x == 'melon' && seed3 > 0 && currentStuff != 'melon') {currentStuff = 'melon';}
+         else if (x == 'wheat' && seed4 > 0 && currentStuff != 'wheat') {currentStuff = 'wheat';}
+         else if (x == 'grapes' && seed5 > 0 && currentStuff != 'grapes') {currentStuff = 'grapes';}
+         else if (x == 'pine' && seed6 > 0 && currentStuff != 'pine') {currentStuff = 'pine';}
+         else if (x == 'bean' && seed7 > 0 && currentStuff != 'bean') {currentStuff = 'bean';}
+         else if (x == 'taba' && seed8 > 0 && currentStuff != 'taba') {currentStuff = 'taba';}
+         else if (x == 'cherry' && seed9 > 0 && currentStuff != 'cherry') {currentStuff = 'cherry';}
+         else if (x == 'star' && seed10 > 0 && currentStuff != 'star') {currentStuff = 'star';}
+         else if (x == 'gold' && seed1E > 0 && currentStuff != 'gold') {currentStuff = 'gold';}
+         else {currentStuff = '';}
+      }
+      
+      function plantSeed(pot) {
+         if (currentStuff != '') {
+            
+            if (currentStuff == 'tomato') {
+               seed1--;
+            }
+            else if (currentStuff == 'orange') {
+               seed2--;
+            }
+            else if (currentStuff == 'melon') {
+               seed3--;
+            }
+            else if (currentStuff == 'wheat') {
+               seed4--;
+            }
+            else if (currentStuff == 'grapes') {
+               seed5--;
+            }
+            else if (currentStuff == 'pine') {
+               seed6--;
+            }
+            else if (currentStuff == 'bean') {
+               seed7--;
+            }
+            else if (currentStuff == 'taba') {
+               seed8--;
+            }
+            else if (currentStuff == 'cherry') {
+               seed9--;
+            }
+            else if (currentStuff == 'star') {
+               seed10--;
+            }
+            else if (currentStuff == 'gold') {
+               seed1E--;
+            }
+            
+            var y = ''
+            y = currentStuff;
+            startCycle(pot, y);
+            currentStuff = '';
+         }
+         
+         if (pot == 1 && pot1 != '' || pot == 2 && pot2 != '' || pot == 3 && pot3 != '' || pot == 4 && pot4 != '') {harvestPlant(pot);}
+      }
+      
+      var pot1 = ''
+      var pot2 = ''
+      var pot3 = ''
+      var pot4 = ''
+      
+      var superspeed = false
+      
+      function startCycle(pot, seed) {
+         if (pot == 1) {pot1 = 'sprout';}
+         else if (pot == 2) {pot2 = 'sprout';}
+         else if (pot == 3) {pot3 = 'sprout';}
+         else if (pot == 4) {pot4 = 'sprout';}
+         
+         // debug == true
+         if (superspeed == true) {
+            setTimeout(stageUpdate, 1, 1, seed, pot);
+            setTimeout(stageUpdate, 2, 2, seed, pot);
+            setTimeout(stageUpdate, 3, 3, seed, pot);
+         }
+         else if (tier1 == 1) {
+            setTimeout(stageUpdate, 6000, 1, seed, pot);
+            setTimeout(stageUpdate, 12000, 2, seed, pot);
+            setTimeout(stageUpdate, 18000, 3, seed, pot);
+         }
+         else if (tier1 == 2) {
+            setTimeout(stageUpdate, 5200, 1, seed, pot);
+            setTimeout(stageUpdate, 10600, 2, seed, pot);
+            setTimeout(stageUpdate, 16000, 3, seed, pot);
+         }
+         else if (tier1 == 3) {
+            setTimeout(stageUpdate, 4600, 1, seed, pot);
+            setTimeout(stageUpdate, 10000, 2, seed, pot);
+            setTimeout(stageUpdate, 15400, 3, seed, pot);
+         }
+         else if (tier1 == 4) {
+            setTimeout(stageUpdate, 4000, 1, seed, pot);
+            setTimeout(stageUpdate, 9000, 2, seed, pot);
+            setTimeout(stageUpdate, 15000, 3, seed, pot);
+         }
+         else if (tier1 == 5) {
+            setTimeout(stageUpdate, 3600, 1, seed, pot);
+            setTimeout(stageUpdate, 7800, 2, seed, pot);
+            setTimeout(stageUpdate, 13000, 3, seed, pot);
+         }
+         else if (tier1 == 6) {
+            setTimeout(stageUpdate, 3000, 1, seed, pot);
+            setTimeout(stageUpdate, 7400, 2, seed, pot);
+            setTimeout(stageUpdate, 12600, 3, seed, pot);
+         }
+         else if (tier1 == 7) {
+            setTimeout(stageUpdate, 2600, 1, seed, pot);
+            setTimeout(stageUpdate, 7000, 2, seed, pot);
+            setTimeout(stageUpdate, 11500, 3, seed, pot);
+         }
+         else if (tier1 == 8) {
+            setTimeout(stageUpdate, 2000, 1, seed, pot);
+            setTimeout(stageUpdate, 6400, 2, seed, pot);
+            setTimeout(stageUpdate, 10000, 3, seed, pot);
+         }
+         else if (tier1 == 9) {
+            setTimeout(stageUpdate, 1500, 1, seed, pot);
+            setTimeout(stageUpdate, 5000, 2, seed, pot);
+            setTimeout(stageUpdate, 9000, 3, seed, pot);
+         }
+         else if (tier1 == 10) {
+            setTimeout(stageUpdate, 1000, 1, seed, pot);
+            setTimeout(stageUpdate, 4000, 2, seed, pot);
+            setTimeout(stageUpdate, 6000, 3, seed, pot);
+         }
+         else if (tier1 == 11) {
+            setTimeout(stageUpdate, 900, 1, seed, pot);
+            setTimeout(stageUpdate, 3600, 2, seed, pot);
+            setTimeout(stageUpdate, 5400, 3, seed, pot);
+         }
+         else if (tier1 == 12) {
+            setTimeout(stageUpdate, 800, 1, seed, pot);
+            setTimeout(stageUpdate, 3400, 2, seed, pot);
+            setTimeout(stageUpdate, 5200, 3, seed, pot);
+         }
+         else if (tier1 == 13) {
+            setTimeout(stageUpdate, 700, 1, seed, pot);
+            setTimeout(stageUpdate, 3400, 2, seed, pot);
+            setTimeout(stageUpdate, 5200, 3, seed, pot);
+         }
+         else if (tier1 == 14) {
+            setTimeout(stageUpdate, 600, 1, seed, pot);
+            setTimeout(stageUpdate, 3100, 2, seed, pot);
+            setTimeout(stageUpdate, 4900, 3, seed, pot);
+         }
+         else if (tier1 == 15) {
+            setTimeout(stageUpdate, 500, 1, seed, pot);
+            setTimeout(stageUpdate, 2700, 2, seed, pot);
+            setTimeout(stageUpdate, 4600, 3, seed, pot);
+         }
+         else if (tier1 == 16) {
+            setTimeout(stageUpdate, 400, 1, seed, pot);
+            setTimeout(stageUpdate, 2300, 2, seed, pot);
+            setTimeout(stageUpdate, 4200, 3, seed, pot);
+         }
+         else if (tier1 == 17) {
+            setTimeout(stageUpdate, 300, 1, seed, pot);
+            setTimeout(stageUpdate, 1800, 2, seed, pot);
+            setTimeout(stageUpdate, 3500, 3, seed, pot);
+         }
+         else if (tier1 == 18) {
+            setTimeout(stageUpdate, 200, 1, seed, pot);
+            setTimeout(stageUpdate, 1200, 2, seed, pot);
+            setTimeout(stageUpdate, 2700, 3, seed, pot);
+         }
+         else if (tier1 == 19) {
+            setTimeout(stageUpdate, 100, 1, seed, pot);
+            setTimeout(stageUpdate, 1600, 2, seed, pot);
+            setTimeout(stageUpdate, 3400, 3, seed, pot);
+         }
+         else if (tier1 == 20) {
+            setTimeout(stageUpdate, 50, 1, seed, pot);
+            setTimeout(stageUpdate, 1000, 2, seed, pot);
+            setTimeout(stageUpdate, 2500, 3, seed, pot);
+         }
+      }
+      
+      var pot1sit = false
+      var pot2sit = false
+      var pot3sit = false
+      var pot4sit = false
+      
+      const wilting = function(pot, plant) {
+         var death = false
+         if (pot == 1) {
+            if (plant == 'tomato' && pot1 == 'tomato_3' && pot1sit == true) {death = true;}
+            if (plant == 'orange' && pot1 == 'orange_3' && pot1sit == true) {death = true;}
+            if (plant == 'melon' && pot1 == 'melon_3' && pot1sit == true) {death = true;}
+            if (plant == 'wheat' && pot1 == 'wheat_3' && pot1sit == true) {death = true;}
+            if (plant == 'grapes' && pot1 == 'grapes_3' && pot1sit == true) {death = true;}
+            if (plant == 'pine' && pot1 == 'pine_3' && pot1sit == true) {death = true;}
+            if (plant == 'bean' && pot1 == 'bean_3' && pot1sit == true) {death = true;}
+            if (plant == 'taba' && pot1 == 'taba_3' && pot1sit == true) {death = true;}
+            if (plant == 'cherry' && pot1 == 'cherry_3' && pot1sit == true) {death = true;}
+            if (plant == 'star' && pot1 == 'star_3' && pot1sit == true) {death = true;}
+            if (plant == 'gold' && pot1 == 'gold_3' && pot1sit == true) {death = true;}
+         }
+         else if (pot == 2) {
+            if (plant == 'tomato' && pot2 == 'tomato_3' && pot2sit == true) {death = true;}
+            if (plant == 'orange' && pot2 == 'orange_3' && pot2sit == true) {death = true;}
+            if (plant == 'melon' && pot2 == 'melon_3' && pot2sit == true) {death = true;}
+            if (plant == 'wheat' && pot2 == 'wheat_3' && pot2sit == true) {death = true;}
+            if (plant == 'grapes' && pot2 == 'grapes_3' && pot2sit == true) {death = true;}
+            if (plant == 'pine' && pot2 == 'pine_3' && pot2sit == true) {death = true;}
+            if (plant == 'bean' && pot2 == 'bean_3' && pot2sit == true) {death = true;}
+            if (plant == 'taba' && pot2 == 'taba_3' && pot2sit == true) {death = true;}
+            if (plant == 'cherry' && pot2 == 'cherry_3' && pot2sit == true) {death = true;}
+            if (plant == 'star' && pot2 == 'star_3' && pot2sit == true) {death = true;}
+            if (plant == 'gold' && pot2 == 'gold_3' && pot2sit == true) {death = true;}
+         }
+         else if (pot == 3) {
+            if (plant == 'tomato' && pot3 == 'tomato_3' && pot3sit == true) {death = true;}
+            if (plant == 'orange' && pot3 == 'orange_3' && pot3sit == true) {death = true;}
+            if (plant == 'melon' && pot3 == 'melon_3' && pot3sit == true) {death = true;}
+            if (plant == 'wheat' && pot3 == 'wheat_3' && pot3sit == true) {death = true;}
+            if (plant == 'grapes' && pot3 == 'grapes_3' && pot3sit == true) {death = true;}
+            if (plant == 'pine' && pot3 == 'pine_3' && pot3sit == true) {death = true;}
+            if (plant == 'bean' && pot3 == 'bean_3' && pot3sit == true) {death = true;}
+            if (plant == 'taba' && pot3 == 'taba_3' && pot3sit == true) {death = true;}
+            if (plant == 'cherry' && pot3 == 'cherry_3' && pot3sit == true) {death = true;}
+            if (plant == 'star' && pot3 == 'star_3' && pot3sit == true) {death = true;}
+            if (plant == 'gold' && pot3 == 'gold_3' && pot3sit == true) {death = true;}
+         }
+         else if (pot == 4) {
+            if (plant == 'tomato' && pot4 == 'tomato_3' && pot4sit == true) {death = true;}
+            if (plant == 'orange' && pot4 == 'orange_3' && pot4sit == true) {death = true;}
+            if (plant == 'melon' && pot4 == 'melon_3' && pot4sit == true) {death = true;}
+            if (plant == 'wheat' && pot4 == 'wheat_3' && pot4sit == true) {death = true;}
+            if (plant == 'grapes' && pot4 == 'grapes_3' && pot4sit == true) {death = true;}
+            if (plant == 'pine' && pot4 == 'pine_3' && pot4sit == true) {death = true;}
+            if (plant == 'bean' && pot4 == 'bean_3' && pot4sit == true) {death = true;}
+            if (plant == 'taba' && pot4 == 'taba_3' && pot4sit == true) {death = true;}
+            if (plant == 'cherry' && pot4 == 'cherry_3' && pot4sit == true) {death = true;}
+            if (plant == 'star' && pot4 == 'star_3' && pot4sit == true) {death = true;}
+            if (plant == 'gold' && pot4 == 'gold_3' && pot4sit == true) {death = true;}
+         }
+         
+         if (death == true) {plantdied = true;}
+      }
+      
+      const speedHarvesting = function(pot) {
+         if (pot == 1 && pot1sit == false) {fastharvest = true;}
+         else if (pot == 2 && pot2sit == false) {fastharvest = true;}
+         else if (pot == 3 && pot3sit == false) {fastharvest = true;}
+         else if (pot == 4 && pot4sit == false) {fastharvest = true;}
+      }
+      
+      function stageUpdate(stage, plant, pot) {
+         if (pot == 1) {
+            if (plant == 'tomato') {
+               if (stage == 1) {pot1 = 'tomato_1';}
+               else if (stage == 2) {pot1 = 'tomato_2';}
+               else if (stage == 3) {pot1 = 'tomato_3'; setTimeout(wilting, 120000, pot, plant); setTimeout(speedHarvesting, 500, pot); pot1sit = true;}
+            }
+            else if (plant == 'orange') {
+               if (stage == 1) {pot1 = 'orange_1';}
+               else if (stage == 2) {pot1 = 'orange_2';}
+               else if (stage == 3) {pot1 = 'orange_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'melon') {
+               if (stage == 1) {pot1 = 'melon_1';}
+               else if (stage == 2) {pot1 = 'melon_2';}
+               else if (stage == 3) {pot1 = 'melon_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'wheat') {
+               if (stage == 1) {pot1 = 'wheat_1';}
+               else if (stage == 2) {pot1 = 'wheat_2';}
+               else if (stage == 3) {pot1 = 'wheat_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'grapes') {
+               if (stage == 1) {pot1 = 'grapes_1';}
+               else if (stage == 2) {pot1 = 'grapes_2';}
+               else if (stage == 3) {pot1 = 'grapes_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'pine') {
+               if (stage == 1) {pot1 = 'pine_1';}
+               else if (stage == 2) {pot1 = 'pine_2';}
+               else if (stage == 3) {pot1 = 'pine_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'bean') {
+               if (stage == 1) {pot1 = 'bean_1';}
+               else if (stage == 2) {pot1 = 'bean_2';}
+               else if (stage == 3) {pot1 = 'bean_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'taba') {
+               if (stage == 1) {pot1 = 'taba_1';}
+               else if (stage == 2) {pot1 = 'taba_2';}
+               else if (stage == 3) {pot1 = 'taba_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'cherry') {
+               if (stage == 1) {pot1 = 'cherry_1';}
+               else if (stage == 2) {pot1 = 'cherry_2';}
+               else if (stage == 3) {pot1 = 'cherry_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'star') {
+               if (stage == 1) {pot1 = 'star_1';}
+               else if (stage == 2) {pot1 = 'star_2';}
+               else if (stage == 3) {pot1 = 'star_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+            else if (plant == 'gold') {
+               if (stage == 1) {pot1 = 'gold_1';}
+               else if (stage == 2) {pot1 = 'gold_2';}
+               else if (stage == 3) {pot1 = 'gold_3'; setTimeout(wilting, 120000, pot, plant); pot1sit = true;}
+            }
+         }
+         else if (pot == 2) {
+            if (plant == 'tomato') {
+               if (stage == 1) {pot2 = 'tomato_1';}
+               else if (stage == 2) {pot2 = 'tomato_2';}
+               else if (stage == 3) {pot2 = 'tomato_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'orange') {
+               if (stage == 1) {pot2 = 'orange_1';}
+               else if (stage == 2) {pot2 = 'orange_2';}
+               else if (stage == 3) {pot2 = 'orange_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'melon') {
+               if (stage == 1) {pot2 = 'melon_1';}
+               else if (stage == 2) {pot2 = 'melon_2';}
+               else if (stage == 3) {pot2 = 'melon_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'wheat') {
+               if (stage == 1) {pot2 = 'wheat_1';}
+               else if (stage == 2) {pot2 = 'wheat_2';}
+               else if (stage == 3) {pot2 = 'wheat_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'grapes') {
+               if (stage == 1) {pot2 = 'grapes_1';}
+               else if (stage == 2) {pot2 = 'grapes_2';}
+               else if (stage == 3) {pot2 = 'grapes_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'pine') {
+               if (stage == 1) {pot2 = 'pine_1';}
+               else if (stage == 2) {pot2 = 'pine_2';}
+               else if (stage == 3) {pot2 = 'pine_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'bean') {
+               if (stage == 1) {pot2 = 'bean_1';}
+               else if (stage == 2) {pot2 = 'bean_2';}
+               else if (stage == 3) {pot2 = 'bean_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'taba') {
+               if (stage == 1) {pot2 = 'taba_1';}
+               else if (stage == 2) {pot2 = 'taba_2';}
+               else if (stage == 3) {pot2 = 'taba_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'cherry') {
+               if (stage == 1) {pot2 = 'cherry_1';}
+               else if (stage == 2) {pot2 = 'cherry_2';}
+               else if (stage == 3) {pot2 = 'cherry_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'star') {
+               if (stage == 1) {pot2 = 'star_1';}
+               else if (stage == 2) {pot2 = 'star_2';}
+               else if (stage == 3) {pot2 = 'star_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+            else if (plant == 'gold') {
+               if (stage == 1) {pot2 = 'gold_1';}
+               else if (stage == 2) {pot2 = 'gold_2';}
+               else if (stage == 3) {pot2 = 'gold_3'; setTimeout(wilting, 120000, pot, plant); pot2sit = true;}
+            }
+         }
+         else if (pot == 3) {
+            if (plant == 'tomato') {
+               if (stage == 1) {pot3 = 'tomato_1';}
+               else if (stage == 2) {pot3 = 'tomato_2';}
+               else if (stage == 3) {pot3 = 'tomato_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'orange') {
+               if (stage == 1) {pot3 = 'orange_1';}
+               else if (stage == 2) {pot3 = 'orange_2';}
+               else if (stage == 3) {pot3 = 'orange_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'melon') {
+               if (stage == 1) {pot3 = 'melon_1';}
+               else if (stage == 2) {pot3 = 'melon_2';}
+               else if (stage == 3) {pot3 = 'melon_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'wheat') {
+               if (stage == 1) {pot3 = 'wheat_1';}
+               else if (stage == 2) {pot3 = 'wheat_2';}
+               else if (stage == 3) {pot3 = 'wheat_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'grapes') {
+               if (stage == 1) {pot3 = 'grapes_1';}
+               else if (stage == 2) {pot3 = 'grapes_2';}
+               else if (stage == 3) {pot3 = 'grapes_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'pine') {
+               if (stage == 1) {pot3 = 'pine_1';}
+               else if (stage == 2) {pot3 = 'pine_2';}
+               else if (stage == 3) {pot3 = 'pine_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'bean') {
+               if (stage == 1) {pot3 = 'bean_1';}
+               else if (stage == 2) {pot3 = 'bean_2';}
+               else if (stage == 3) {pot3 = 'bean_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'taba') {
+               if (stage == 1) {pot3 = 'taba_1';}
+               else if (stage == 2) {pot3 = 'taba_2';}
+               else if (stage == 3) {pot3 = 'taba_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'cherry') {
+               if (stage == 1) {pot3 = 'cherry_1';}
+               else if (stage == 2) {pot3 = 'cherry_2';}
+               else if (stage == 3) {pot3 = 'cherry_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'star') {
+               if (stage == 1) {pot3 = 'star_1';}
+               else if (stage == 2) {pot3 = 'star_2';}
+               else if (stage == 3) {pot3 = 'star_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+            else if (plant == 'gold') {
+               if (stage == 1) {pot3 = 'gold_1';}
+               else if (stage == 2) {pot3 = 'gold_2';}
+               else if (stage == 3) {pot3 = 'gold_3'; setTimeout(wilting, 120000, pot, plant); pot3sit = true;}
+            }
+         }
+         else if (pot == 4) {
+            if (plant == 'tomato') {
+               if (stage == 1) {pot4 = 'tomato_1';}
+               else if (stage == 2) {pot4 = 'tomato_2';}
+               else if (stage == 3) {pot4 = 'tomato_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'orange') {
+               if (stage == 1) {pot4 = 'orange_1';}
+               else if (stage == 2) {pot4 = 'orange_2';}
+               else if (stage == 3) {pot4 = 'orange_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'melon') {
+               if (stage == 1) {pot4 = 'melon_1';}
+               else if (stage == 2) {pot4 = 'melon_2';}
+               else if (stage == 3) {pot4 = 'melon_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'wheat') {
+               if (stage == 1) {pot4 = 'wheat_1';}
+               else if (stage == 2) {pot4 = 'wheat_2';}
+               else if (stage == 3) {pot4 = 'wheat_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'grapes') {
+               if (stage == 1) {pot4 = 'grapes_1';}
+               else if (stage == 2) {pot4 = 'grapes_2';}
+               else if (stage == 3) {pot4 = 'grapes_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'pine') {
+               if (stage == 1) {pot4 = 'pine_1';}
+               else if (stage == 2) {pot4 = 'pine_2';}
+               else if (stage == 3) {pot4 = 'pine_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'bean') {
+               if (stage == 1) {pot4 = 'bean_1';}
+               else if (stage == 2) {pot4 = 'bean_2';}
+               else if (stage == 3) {pot4 = 'bean_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'taba') {
+               if (stage == 1) {pot4 = 'taba_1';}
+               else if (stage == 2) {pot4 = 'taba_2';}
+               else if (stage == 3) {pot4 = 'taba_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'cherry') {
+               if (stage == 1) {pot4 = 'cherry_1';}
+               else if (stage == 2) {pot4 = 'cherry_2';}
+               else if (stage == 3) {pot4 = 'cherry_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'star') {
+               if (stage == 1) {pot4 = 'star_1';}
+               else if (stage == 2) {pot4 = 'star_2';}
+               else if (stage == 3) {pot4 = 'star_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+            else if (plant == 'gold') {
+               if (stage == 1) {pot4 = 'gold_1';}
+               else if (stage == 2) {pot4 = 'gold_2';}
+               else if (stage == 3) {pot4 = 'gold_3'; setTimeout(wilting, 120000, pot, plant); pot4sit = true;}
+            }
+         }
+         
+         if (true) {
+            var leaf = 0
+            var lock = 0
+            var chance = 100
+            leaf = 0;
+            
+            if (tier3 == 1) {chance == 100;}
+            else if (tier3 == 2) {chance == 90;}
+            else if (tier3 == 3) {chance == 80;}
+            else if (tier3 == 4) {chance == 70;}
+            else if (tier3 == 5) {chance == 60;}
+            else if (tier3 == 6) {chance == 50;}
+            else if (tier3 == 7) {chance == 40;}
+            else if (tier3 == 8) {chance == 30;}
+            else if (tier3 == 9) {chance == 20;}
+            else if (tier3 == 10) {chance == 15;}
+            else if (tier3 == 11) {chance == 10;}
+            else if (tier3 == 12) {chance == 9;}
+            else if (tier3 == 13) {chance == 8;}
+            else if (tier3 == 14) {chance == 7;}
+            else if (tier3 == 15) {chance == 6;}
+            else if (tier3 == 16) {chance == 5;}
+            else if (tier3 == 17) {chance == 4;}
+            else if (tier3 == 18) {chance == 3;}
+            else if (tier3 == 19) {chance == 2;}
+            else if (tier3 == 20) {chance == 1;}
+            
+            lock = Math.floor(Math.random() * chance) + 1;
+            leaf = Math.floor(Math.random() * chance) + 1;
+            
+            if (leaf == lock) {money = money + Math.random(Math.floor() * 150); goldleafeffects++;}
+         }
+      }
+      
+      
+      // If you ever modify this game here is where most of the pot state textures are kept so yeah
+      var potU = "url('images/pot_states/pot.png')"
+      var sproutU = "url('images/pot_states/sprout.png')"
+      var tomatoU1 = "url('images/pot_states/tomato/tomato_stage1.png')"
+      var tomatoU2 = "url('images/pot_states/tomato/tomato_stage2.png')"
+      var tomatoU3 = "url('images/pot_states/tomato/tomato_stage3.png')"
+      var orangeU1 = "url('images/pot_states/orange/orange_stage1.png')"
+      var orangeU2 = "url('images/pot_states/orange/orange_stage2.png')"
+      var orangeU3 = "url('images/pot_states/orange/orange_stage3.png')"
+      var melonU1 = "url('images/pot_states/orange/melon_stage1.png')"
+      var melonU2 = "url('images/pot_states/orange/melon_stage2.png')"
+      var melonU3 = "url('images/pot_states/orange/melon_stage3.png')"
+      var wheatU1 = "url('images/pot_states/wheat/wheat_stage1.png')"
+      var wheatU2 = "url('images/pot_states/wheat/wheat_stage2.png')"
+      var wheatU3 = "url('images/pot_states/wheat/wheat_stage3.png')"
+      var grapesU1 = "url('images/pot_states/grapes/grapes_stage1.png')"
+      var grapesU2 = "url('images/pot_states/grapes/grapes_stage2.png')"
+      var grapesU3 = "url('images/pot_states/grapes/grapes_stage3.png')"
+      var pineU1 = "url('images/pot_states/pineapple/pine_stage1.png')"
+      var pineU2 = "url('images/pot_states/pineapple/pine_stage2.png')"
+      var pineU3 = "url('images/pot_states/pineapple/pine_stage3.png')"
+      var beanU1 = "url('images/pot_states/bean/bean_stage1.png')"
+      var beanU2 = "url('images/pot_states/bean/bean_stage2.png')"
+      var beanU3 = "url('images/pot_states/bean/bean_stage3.png')"
+      var tabaU1 = "url('images/pot_states/tabacco/taba_stage1.png')"
+      var tabaU2 = "url('images/pot_states/tabacco/taba_stage2.png')"
+      var tabaU3 = "url('images/pot_states/tabacco/taba_stage3.png')"
+      var cherryU1 = "url('images/pot_states/cherry/cherry_stage1.png')"
+      var cherryU2 = "url('images/pot_states/cherry/cherry_stage2.png')"
+      var cherryU3 = "url('images/pot_states/cherry/cherry_stage3.png')"
+      var starU1 = "url('images/pot_states/starfruit/star_stage1.png')"
+      var starU2 = "url('images/pot_states/starfruit/star_stage2.png')"
+      var starU3 = "url('images/pot_states/starfruit/star_stage3.png')"
+      var goldU1 = "url('images/pot_states/goldenapple/gold_stage1.png')"
+      var goldU2 = "url('images/pot_states/goldenapple/gold_stage2.png')"
+      var goldU3 = "url('images/pot_states/goldenapple/gold_stage3.png')"
+      
+      function showPlant() {
+         // pot 1
+         if (pot1 == '') {document.getElementById("pot1").style.backgroundImage = potU;}
+         else if (pot1 == 'sprout') {document.getElementById("pot1").style.backgroundImage = sproutU;}
+         else if (pot1 == 'tomato_1') {document.getElementById("pot1").style.backgroundImage = tomatoU1;}
+         else if (pot1 == 'tomato_2') {document.getElementById("pot1").style.backgroundImage = tomatoU2;}
+         else if (pot1 == 'tomato_3') {document.getElementById("pot1").style.backgroundImage = tomatoU3;}
+         else if (pot1 == 'orange_1') {document.getElementById("pot1").style.backgroundImage = orangeU1;}
+         else if (pot1 == 'orange_2') {document.getElementById("pot1").style.backgroundImage = orangeU2;}
+         else if (pot1 == 'orange_3') {document.getElementById("pot1").style.backgroundImage = orangeU3;}
+         else if (pot1 == 'melon_1') {document.getElementById("pot1").style.backgroundImage = melonU1;}
+         else if (pot1 == 'melon_2') {document.getElementById("pot1").style.backgroundImage = melonU2;}
+         else if (pot1 == 'melon_3') {document.getElementById("pot1").style.backgroundImage = melonU3;}
+         else if (pot1 == 'wheat_1') {document.getElementById("pot1").style.backgroundImage = wheatU1;}
+         else if (pot1 == 'wheat_2') {document.getElementById("pot1").style.backgroundImage = wheatU2;}
+         else if (pot1 == 'wheat_3') {document.getElementById("pot1").style.backgroundImage = wheatU3;}
+         else if (pot1 == 'grapes_1') {document.getElementById("pot1").style.backgroundImage = grapesU1;}
+         else if (pot1 == 'grapes_2') {document.getElementById("pot1").style.backgroundImage = grapesU2;}
+         else if (pot1 == 'grapes_3') {document.getElementById("pot1").style.backgroundImage = grapesU3;}
+         else if (pot1 == 'pine_1') {document.getElementById("pot1").style.backgroundImage = pineU1;}
+         else if (pot1 == 'pine_2') {document.getElementById("pot1").style.backgroundImage = pineU2;}
+         else if (pot1 == 'pine_3') {document.getElementById("pot1").style.backgroundImage = pineU3;}
+         else if (pot1 == 'bean_1') {document.getElementById("pot1").style.backgroundImage = beanU1;}
+         else if (pot1 == 'bean_2') {document.getElementById("pot1").style.backgroundImage = beanU2;}
+         else if (pot1 == 'bean_3') {document.getElementById("pot1").style.backgroundImage = beanU3;}
+         else if (pot1 == 'taba_1') {document.getElementById("pot1").style.backgroundImage = tabaU1;}
+         else if (pot1 == 'taba_2') {document.getElementById("pot1").style.backgroundImage = tabaU2;}
+         else if (pot1 == 'taba_3') {document.getElementById("pot1").style.backgroundImage = tabaU3;}
+         else if (pot1 == 'cherry_1') {document.getElementById("pot1").style.backgroundImage = cherryU1;}
+         else if (pot1 == 'cherry_2') {document.getElementById("pot1").style.backgroundImage = cherryU2;}
+         else if (pot1 == 'cherry_3') {document.getElementById("pot1").style.backgroundImage = cherryU3;}
+         else if (pot1 == 'star_1') {document.getElementById("pot1").style.backgroundImage = starU1;}
+         else if (pot1 == 'star_2') {document.getElementById("pot1").style.backgroundImage = starU2;}
+         else if (pot1 == 'star_3') {document.getElementById("pot1").style.backgroundImage = starU3;}
+         else if (pot1 == 'gold_1') {document.getElementById("pot1").style.backgroundImage = goldU1;}
+         else if (pot1 == 'gold_2') {document.getElementById("pot1").style.backgroundImage = goldU2;}
+         else if (pot1 == 'gold_3') {document.getElementById("pot1").style.backgroundImage = goldU3;}
+         
+         // pot 2
+         if (pot2 == '') {document.getElementById("pot2").style.backgroundImage = potU;}
+         else if (pot2 == 'sprout') {document.getElementById("pot2").style.backgroundImage = sproutU;}
+         else if (pot2 == 'tomato_1') {document.getElementById("pot2").style.backgroundImage = tomatoU1;}
+         else if (pot2 == 'tomato_2') {document.getElementById("pot2").style.backgroundImage = tomatoU2;}
+         else if (pot2 == 'tomato_3') {document.getElementById("pot2").style.backgroundImage = tomatoU3;}
+         else if (pot2 == 'orange_1') {document.getElementById("pot2").style.backgroundImage = orangeU1;}
+         else if (pot2 == 'orange_2') {document.getElementById("pot2").style.backgroundImage = orangeU2;}
+         else if (pot2 == 'orange_3') {document.getElementById("pot2").style.backgroundImage = orangeU3;}
+         else if (pot2 == 'melon_1') {document.getElementById("pot2").style.backgroundImage = melonU1;}
+         else if (pot2 == 'melon_2') {document.getElementById("pot2").style.backgroundImage = melonU2;}
+         else if (pot2 == 'melon_3') {document.getElementById("pot2").style.backgroundImage = melonU3;}
+         else if (pot2 == 'wheat_1') {document.getElementById("pot2").style.backgroundImage = wheatU1;}
+         else if (pot2 == 'wheat_2') {document.getElementById("pot2").style.backgroundImage = wheatU2;}
+         else if (pot2 == 'wheat_3') {document.getElementById("pot2").style.backgroundImage = wheatU3;}
+         else if (pot2 == 'grapes_1') {document.getElementById("pot2").style.backgroundImage = grapesU1;}
+         else if (pot2 == 'grapes_2') {document.getElementById("pot2").style.backgroundImage = grapesU2;}
+         else if (pot2 == 'grapes_3') {document.getElementById("pot2").style.backgroundImage = grapesU3;}
+         else if (pot2 == 'pine_1') {document.getElementById("pot2").style.backgroundImage = pineU1;}
+         else if (pot2 == 'pine_2') {document.getElementById("pot2").style.backgroundImage = pineU2;}
+         else if (pot2 == 'pine_3') {document.getElementById("pot2").style.backgroundImage = pineU3;}
+         else if (pot2 == 'bean_1') {document.getElementById("pot2").style.backgroundImage = beanU1;}
+         else if (pot2 == 'bean_2') {document.getElementById("pot2").style.backgroundImage = beanU2;}
+         else if (pot2 == 'bean_3') {document.getElementById("pot2").style.backgroundImage = beanU3;}
+         else if (pot2 == 'taba_1') {document.getElementById("pot2").style.backgroundImage = tabaU1;}
+         else if (pot2 == 'taba_2') {document.getElementById("pot2").style.backgroundImage = tabaU2;}
+         else if (pot2 == 'taba_3') {document.getElementById("pot2").style.backgroundImage = tabaU3;}
+         else if (pot2 == 'cherry_1') {document.getElementById("pot2").style.backgroundImage = cherryU1;}
+         else if (pot2 == 'cherry_2') {document.getElementById("pot2").style.backgroundImage = cherryU2;}
+         else if (pot2 == 'cherry_3') {document.getElementById("pot2").style.backgroundImage = cherryU3;}
+         else if (pot2 == 'star_1') {document.getElementById("pot2").style.backgroundImage = starU1;}
+         else if (pot2 == 'star_2') {document.getElementById("pot2").style.backgroundImage = starU2;}
+         else if (pot2 == 'star_3') {document.getElementById("pot2").style.backgroundImage = starU3;}
+         else if (pot2 == 'gold_1') {document.getElementById("pot2").style.backgroundImage = goldU1;}
+         else if (pot2 == 'gold_2') {document.getElementById("pot2").style.backgroundImage = goldU2;}
+         else if (pot2 == 'gold_3') {document.getElementById("pot2").style.backgroundImage = goldU3;}
+         
+         // pot 3
+         if (pot3 == '') {document.getElementById("pot3").style.backgroundImage = potU;}
+         else if (pot3 == 'sprout') {document.getElementById("pot3").style.backgroundImage = sproutU;}
+         else if (pot3 == 'tomato_1') {document.getElementById("pot3").style.backgroundImage = tomatoU1;}
+         else if (pot3 == 'tomato_2') {document.getElementById("pot3").style.backgroundImage = tomatoU2;}
+         else if (pot3 == 'tomato_3') {document.getElementById("pot3").style.backgroundImage = tomatoU3;}
+         else if (pot3 == 'orange_1') {document.getElementById("pot3").style.backgroundImage = orangeU1;}
+         else if (pot3 == 'orange_2') {document.getElementById("pot3").style.backgroundImage = orangeU2;}
+         else if (pot3 == 'orange_3') {document.getElementById("pot3").style.backgroundImage = orangeU3;}
+         else if (pot3 == 'melon_1') {document.getElementById("pot3").style.backgroundImage = melonU1;}
+         else if (pot3 == 'melon_2') {document.getElementById("pot3").style.backgroundImage = melonU2;}
+         else if (pot3 == 'melon_3') {document.getElementById("pot3").style.backgroundImage = melonU3;}
+         else if (pot3 == 'wheat_1') {document.getElementById("pot3").style.backgroundImage = wheatU1;}
+         else if (pot3 == 'wheat_2') {document.getElementById("pot3").style.backgroundImage = wheatU2;}
+         else if (pot3 == 'wheat_3') {document.getElementById("pot3").style.backgroundImage = wheatU3;}
+         else if (pot3 == 'grapes_1') {document.getElementById("pot3").style.backgroundImage = grapesU1;}
+         else if (pot3 == 'grapes_2') {document.getElementById("pot3").style.backgroundImage = grapesU2;}
+         else if (pot3 == 'grapes_3') {document.getElementById("pot3").style.backgroundImage = grapesU3;}
+         else if (pot3 == 'pine_1') {document.getElementById("pot3").style.backgroundImage = pineU1;}
+         else if (pot3 == 'pine_2') {document.getElementById("pot3").style.backgroundImage = pineU2;}
+         else if (pot3 == 'pine_3') {document.getElementById("pot3").style.backgroundImage = pineU3;}
+         else if (pot3 == 'bean_1') {document.getElementById("pot3").style.backgroundImage = beanU1;}
+         else if (pot3 == 'bean_2') {document.getElementById("pot3").style.backgroundImage = beanU2;}
+         else if (pot3 == 'bean_3') {document.getElementById("pot3").style.backgroundImage = beanU3;}
+         else if (pot3 == 'taba_1') {document.getElementById("pot3").style.backgroundImage = tabaU1;}
+         else if (pot3 == 'taba_2') {document.getElementById("pot3").style.backgroundImage = tabaU2;}
+         else if (pot3 == 'taba_3') {document.getElementById("pot3").style.backgroundImage = tabaU3;}
+         else if (pot3 == 'cherry_1') {document.getElementById("pot3").style.backgroundImage = cherryU1;}
+         else if (pot3 == 'cherry_2') {document.getElementById("pot3").style.backgroundImage = cherryU2;}
+         else if (pot3 == 'cherry_3') {document.getElementById("pot3").style.backgroundImage = cherryU3;}
+         else if (pot3 == 'star_1') {document.getElementById("pot3").style.backgroundImage = starU1;}
+         else if (pot3 == 'star_2') {document.getElementById("pot3").style.backgroundImage = starU2;}
+         else if (pot3 == 'star_3') {document.getElementById("pot3").style.backgroundImage = starU3;}
+         else if (pot3 == 'gold_1') {document.getElementById("pot3").style.backgroundImage = goldU1;}
+         else if (pot3 == 'gold_2') {document.getElementById("pot3").style.backgroundImage = goldU2;}
+         else if (pot3 == 'gold_3') {document.getElementById("pot3").style.backgroundImage = goldU3;}
+         
+         // pot 4
+         if (pot4 == '') {document.getElementById("pot4").style.backgroundImage = potU;}
+         else if (pot4 == 'sprout') {document.getElementById("pot4").style.backgroundImage = sproutU;}
+         else if (pot4 == 'tomato_1') {document.getElementById("pot4").style.backgroundImage = tomatoU1;}
+         else if (pot4 == 'tomato_2') {document.getElementById("pot4").style.backgroundImage = tomatoU2;}
+         else if (pot4 == 'tomato_3') {document.getElementById("pot4").style.backgroundImage = tomatoU3;}
+         else if (pot4 == 'orange_1') {document.getElementById("pot4").style.backgroundImage = orangeU1;}
+         else if (pot4 == 'orange_2') {document.getElementById("pot4").style.backgroundImage = orangeU2;}
+         else if (pot4 == 'orange_3') {document.getElementById("pot4").style.backgroundImage = orangeU3;}
+         else if (pot4 == 'melon_1') {document.getElementById("pot4").style.backgroundImage = melonU1;}
+         else if (pot4 == 'melon_2') {document.getElementById("pot4").style.backgroundImage = melonU2;}
+         else if (pot4 == 'melon_3') {document.getElementById("pot4").style.backgroundImage = melonU3;}
+         else if (pot4 == 'wheat_1') {document.getElementById("pot4").style.backgroundImage = wheatU1;}
+         else if (pot4 == 'wheat_2') {document.getElementById("pot4").style.backgroundImage = wheatU2;}
+         else if (pot4 == 'wheat_3') {document.getElementById("pot4").style.backgroundImage = wheatU3;}
+         else if (pot4 == 'grapes_1') {document.getElementById("pot4").style.backgroundImage = grapesU1;}
+         else if (pot4 == 'grapes_2') {document.getElementById("pot4").style.backgroundImage = grapesU2;}
+         else if (pot4 == 'grapes_3') {document.getElementById("pot4").style.backgroundImage = grapesU3;}
+         else if (pot4 == 'pine_1') {document.getElementById("pot4").style.backgroundImage = pineU1;}
+         else if (pot4 == 'pine_2') {document.getElementById("pot4").style.backgroundImage = pineU2;}
+         else if (pot4 == 'pine_3') {document.getElementById("pot4").style.backgroundImage = pineU3;}
+         else if (pot4 == 'bean_1') {document.getElementById("pot4").style.backgroundImage = beanU1;}
+         else if (pot4 == 'bean_2') {document.getElementById("pot4").style.backgroundImage = beanU2;}
+         else if (pot4 == 'bean_3') {document.getElementById("pot4").style.backgroundImage = beanU3;}
+         else if (pot4 == 'taba_1') {document.getElementById("pot4").style.backgroundImage = tabaU1;}
+         else if (pot4 == 'taba_2') {document.getElementById("pot4").style.backgroundImage = tabaU2;}
+         else if (pot4 == 'taba_3') {document.getElementById("pot4").style.backgroundImage = tabaU3;}
+         else if (pot4 == 'cherry_1') {document.getElementById("pot4").style.backgroundImage = cherryU1;}
+         else if (pot4 == 'cherry_2') {document.getElementById("pot4").style.backgroundImage = cherryU2;}
+         else if (pot4 == 'cherry_3') {document.getElementById("pot4").style.backgroundImage = cherryU3;}
+         else if (pot4 == 'star_1') {document.getElementById("pot4").style.backgroundImage = starU1;}
+         else if (pot4 == 'star_2') {document.getElementById("pot4").style.backgroundImage = starU2;}
+         else if (pot4 == 'star_3') {document.getElementById("pot4").style.backgroundImage = starU3;}
+         else if (pot4 == 'gold_1') {document.getElementById("pot4").style.backgroundImage = goldU1;}
+         else if (pot4 == 'gold_2') {document.getElementById("pot4").style.backgroundImage = goldU2;}
+         else if (pot4 == 'gold_3') {document.getElementById("pot4").style.backgroundImage = goldU3;}
+      }
+      
+      // harvest
+      
+      function harvestPlant(pot) {
+         var i = 0
+         var j = 0
+         i = Math.floor(Math.random() * 20) + 1;
+         j = Math.floor(Math.random() * 20) + 1;
+         
+         if (i == j) {gs = true;}
+         
+         var gs = false
+         var hide = false
+         
+         if (pot == 1 && pot1 != '') {
+            if (pot1 == 'tomato_3') {plant1++; pot1sit = false; if (gs == true) {seed1++;} hide = true;}
+            else if (pot1 == 'orange_3') {plant2++; pot1sit = false; if (gs == true) {seed2++;} hide = true;}
+            else if (pot1 == 'melon_3') {plant3++; pot1sit = false; if (gs == true) {seed3++;} hide = true;}
+            else if (pot1 == 'wheat_3') {plant4++; pot1sit = false; if (gs == true) {seed4++;} hide = true;}
+            else if (pot1 == 'grapes_3') {plant5++; pot1sit = false; if (gs == true) {seed5++;} hide = true;}
+            else if (pot1 == 'pine_3') {plant6++; pot1sit = false; if (gs == true) {seed6++;} hide = true;}
+            else if (pot1 == 'bean_3') {plant7++; pot1sit = false; if (gs == true) {seed7++;} hide = true;}
+            else if (pot1 == 'taba_3') {plant8++; pot1sit = false; if (gs == true) {seed8++;} hide = true;}
+            else if (pot1 == 'cherry_3') {plant9++; pot1sit = false; if (gs == true) {seed9++;} hide = true;}
+            else if (pot1 == 'star_3') {plant10++; pot1sit = false; if (gs == true) {seed10++;} hide = true;}
+            else if (pot1 == 'gold_3') {plant1E++; pot1sit = false; if (gs == true) {seed1E++;} hide = true;}
+            
+            if (hide == true) {
+               pot1 = '';
+               document.getElementById("pot1").style.backgroundImage = "url('images/pot_states/pot.png')";
+               harvested++;
+            }
+            else if (pot1 != 'sprout' && pot1 != '') {
+               killedPlant = true;
+            }
+         }
+         else if (pot == 2 && pot2 != '') {
+            if (pot2 == 'tomato_3') {plant1++; pot2sit = false; if (gs == true) {seed1++;} hide = true;}
+            else if (pot2 == 'orange_3') {plant2++; pot2sit = false; if (gs == true) {seed2++;} hide = true;}
+            else if (pot2 == 'melon_3') {plant3++; pot2sit = false; if (gs == true) {seed3++;} hide = true;}
+            else if (pot2 == 'wheat_3') {plant4++; pot2sit = false; if (gs == true) {seed4++;} hide = true;}
+            else if (pot2 == 'grapes_3') {plant5++; pot2sit = false; if (gs == true) {seed5++;} hide = true;}
+            else if (pot2 == 'pine_3') {plant6++; pot2sit = false; if (gs == true) {seed6++;} hide = true;}
+            else if (pot2 == 'bean_3') {plant7++; pot2sit = false; if (gs == true) {seed7++;} hide = true;}
+            else if (pot2 == 'taba_3') {plant8++; pot2sit = false; if (gs == true) {seed8++;} hide = true;}
+            else if (pot2 == 'cherry_3') {plant9++; pot2sit = false; if (gs == true) {seed9++;} hide = true;}
+            else if (pot2 == 'star_3') {plant10++; pot2sit = false; if (gs == true) {seed10++;} hide = true;}
+            else if (pot2 == 'gold_3') {plant1E++; pot2sit = false; if (gs == true) {seed1E++;} hide = true;}
+            
+            if (hide == true) {
+               pot2 = '';
+               document.getElementById("pot2").style.backgroundImage = "url('images/pot_states/pot.png')";
+               harvested++;
+            }
+            else if (pot2 != 'sprout' && pot2 != '') {
+               killedPlant = true;
+            }
+         }
+         else if (pot == 3 && pot3 != '') {
+            if (pot3 == 'tomato_3') {plant1++; pot3sit = false; hide = true; if (gs == true) {seed1++;}}
+            else if (pot3 == 'orange_3') {plant2++; pot3sit = false; hide = true; if (gs == true) {seed2++;}}
+            else if (pot3 == 'melon_3') {plant3++; pot3sit = false; hide = true; if (gs == true) {seed3++;}}
+            else if (pot3 == 'wheat_3') {plant4++; pot3sit = false; hide = true; if (gs == true) {seed4++;}}
+            else if (pot3 == 'grapes_3') {plant5++; pot3sit = false; hide = true; if (gs == true) {seed5++;}}
+            else if (pot3 == 'pine_3') {plant6++; pot3sit = false; hide = true; if (gs == true) {seed6++;}}
+            else if (pot2 == 'bean_3') {plant7++; pot3sit = false; hide = true; if (gs == true) {seed7++;}}
+            else if (pot2 == 'taba_3') {plant8++; pot3sit = false; hide = true; if (gs == true) {seed8++;}}
+            else if (pot2 == 'cherry_3') {plant9++; pot3sit = false; hide = true; if (gs == true) {seed9++;}}
+            else if (pot2 == 'star_3') {plant10++; pot3sit = false; hide = true; if (gs == true) {seed10++;}}
+            else if (pot3 == 'gold_3') {plant1E++; pot3sit = false; hide = true; if (gs == true) {seed1E++;}}
+            
+            if (hide == true) {
+               pot3 = '';
+               document.getElementById("pot3").style.backgroundImage = "url('images/pot_states/pot.png')";
+               harvested++;
+            }
+            else if (pot3 != 'sprout' && pot3 != '') {
+               killedPlant = true;
+            }
+         }
+         else if (pot == 4 && pot4 != '') {
+            if (pot4 == 'tomato_3') {plant1++; pot4sit = false; hide = true; if (gs == true) {seed1++;}}
+            else if (pot4 == 'orange_3') {plant2++; pot4sit = false; hide = true; if (gs == true) {seed2++;}}
+            else if (pot4 == 'melon_3') {plant3++; pot4sit = false; hide = true; if (gs == true) {seed3++;}}
+            else if (pot4 == 'wheat_3') {plant4++; pot4sit = false; hide = true; if (gs == true) {seed4++;}}
+            else if (pot4 == 'grapes_3') {plant5++; pot4sit = false; hide = true; if (gs == true) {seed5++;}}
+            else if (pot4 == 'pine_3') {plant6++; pot4sit = false; hide = true; if (gs == true) {seed6++;}}
+            else if (pot4 == 'bean_3') {plant7++; pot4sit = false; hide = true; if (gs == true) {seed7++;}}
+            else if (pot4 == 'taba_3') {plant8++; pot4sit = false; hide = true; if (gs == true) {seed8++;}}
+            else if (pot4 == 'cherry_3') {plant9++; pot4sit = false; hide = true; if (gs == true) {seed9++;}}
+            else if (pot4 == 'star_3') {plant10++; pot4sit = false; hide = true; if (gs == true) {seed10++;}}
+            else if (pot4 == 'gold_3') {plant1E++; pot4sit = false; hide = true; if (gs == true) {seed1E++;}}
+            
+            if (hide == true) {
+               pot4 = '';
+               document.getElementById("pot4").style.backgroundImage = "url('images/pot_states/pot.png')";
+               harvested++;
+            }
+            else if (pot4 != 'sprout' && pot4 != '') {
+               killedPlant = true;
+            }
+         }
+      }
+      
+      function sellPlants() {
+         var canSell = true
+         
+         var v = 0
+         var total = 0
+         v = v + plant1 * 5 * tier2;
+         v = v + plant2 * 15 * tier2;
+         v = v + plant3 * 40 * tier2;
+         v = v + plant4 * 80 * tier2;
+         v = v + plant5 * 150 * tier2;
+         v = v + plant6 * 300 * tier2;
+         v = v + plant7 * 700 * tier2;
+         v = v + plant8 * 1000 * tier2;
+         v = v + plant9 * 1500 * tier2;
+         v = v + plant10 * 6000 * tier2;
+         
+         v = v + plant1E * 10000 * tier2;
+         
+         total = money + v;
+         if (total > 999999) {canSell = false;}
+         if (total >= 10000 && canSell == true) {plantsoldformuch = true;}
+         else {canSell = true;}
+         
+         if (canSell == true) {
+            plant1 = 0;
+            plant2 = 0;
+            plant3 = 0;
+            plant4 = 0;
+            plant5 = 0;
+            plant6 = 0;
+            plant7 = 0;
+            plant8 = 0;
+            plant9 = 0;
+            plant10 = 0;
+            
+            plant1E = 0;
+            
+            money = money + v;
+            moneyAT = moneyAT + v;
+         }
+         
+      }
+      
+      
+      // update loops
+      
+      function currentPlant() {
+         if (currentStuff == 'tomato') {
+            document.getElementById("sp1").style.border = "orange 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'orange') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "orange 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'melon') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "orange 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'wheat') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "orange 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'grapes') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "orange 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'pine') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "orange 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'bean') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "orange 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'taba') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "orange 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'cherry') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "orange 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'star') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "orange 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+         else if (currentStuff == 'gold') {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "orange 7px solid";
+         } else {
+            document.getElementById("sp1").style.border = "black 7px solid";
+            document.getElementById("sp2").style.border = "black 7px solid";
+            document.getElementById("sp3").style.border = "black 7px solid";
+            document.getElementById("sp4").style.border = "black 7px solid";
+            document.getElementById("sp5").style.border = "black 7px solid";
+            document.getElementById("sp6").style.border = "black 7px solid";
+            document.getElementById("sp7").style.border = "black 7px solid";
+            document.getElementById("sp8").style.border = "black 7px solid";
+            document.getElementById("sp9").style.border = "black 7px solid";
+            document.getElementById("sp10").style.border = "black 7px solid";
+            document.getElementById("sp1E").style.border = "black 7px solid";
+         }
+      }
+      
+      setInterval(function() {
+         currentPlant();
+         
+         document.getElementById("seed1").innerHTML = seed1;
+         document.getElementById("seed2").innerHTML = seed2;
+         document.getElementById("seed3").innerHTML = seed3;
+         document.getElementById("seed4").innerHTML = seed4;
+         document.getElementById("seed5").innerHTML = seed5;
+         document.getElementById("seed6").innerHTML = seed6;
+         document.getElementById("seed7").innerHTML = seed7;
+         document.getElementById("seed8").innerHTML = seed8;
+         document.getElementById("seed9").innerHTML = seed9;
+         document.getElementById("seed10").innerHTML = seed10;
+         document.getElementById("seed1E").innerHTML = seed1E;
+         document.getElementById("plant1").innerHTML = plant1;
+         document.getElementById("plant2").innerHTML = plant2;
+         document.getElementById("plant3").innerHTML = plant3;
+         document.getElementById("plant4").innerHTML = plant4;
+         document.getElementById("plant5").innerHTML = plant5;
+         document.getElementById("plant6").innerHTML = plant6;
+         document.getElementById("plant7").innerHTML = plant7;
+         document.getElementById("plant8").innerHTML = plant8;
+         document.getElementById("plant9").innerHTML = plant9;
+         document.getElementById("plant10").innerHTML = plant10;
+         document.getElementById("plant1E").innerHTML = plant1E;
+         
+         if (debug == true) {
+            if (true) {
+               document.getElementById("pot1").innerText = pot1;
+               document.getElementById("pot2").innerText = pot2;
+               document.getElementById("pot3").innerText = pot3;
+               document.getElementById("pot4").innerText = pot4;
+            }
+            
+            if (true) {
+               // probably the oldest piece of code in the game
+               seed1 = 999;
+               seed2 = 999;
+               seed3 = 999;
+            }
+            
+            if (true) {
+               money = 999999;
+               moneyAT = moneyAT + 999999;
+            }
+         }
+         
+         showPlant();
+         
+         document.getElementById("gardenmoney").innerHTML = "$" + money;
+         document.getElementById("seedmoney").innerHTML = "$" + money;
+         document.getElementById("shopmoney").innerHTML = "$" + money;
+         
+         
+         updateShopItems(1);
+         updateShopItems(2);
+         updateShopItems(3);
+         updateShopItems(4);
+         document.getElementById("pri1").innerHTML = pri1;
+         document.getElementById("pri2").innerHTML = pri2;
+         document.getElementById("pri3").innerHTML = pri3;
+         document.getElementById("pri4").innerHTML = pri4;
+         
+         seedUnlock();
+         
+         if (money > 999999) {money = 999999;}
+      }, 1);
+      setInterval(function() {
+         money = Math.floor(money);
+      }, 1000);
+      
+      //////////////////////////////
+      //     STORE
+      /////////////////////////////
+      
+      var tier1 = 1
+      var tier2 = 1
+      var tier3 = 1
+      var tier4 = 1
+      
+      var pri1 = 30
+      var pri2 = 100
+      var pri3 = 65
+      var pri4 = 150
+      
+      function buyStoreItem(x) {
+         if (x == 1 && money >= pri1 && tier1 != 20) {
+            money = money - pri1; 
+            tier1++;
+            pri1 = Math.floor(pri1 * 1.30);
+            if (tier1 == 20) {pri1 = "SOLD OUT";}
+         }
+         else if (x == 2 && money >= pri2 && tier2 != 20) {
+            money = money - pri2; 
+            tier2++;
+            pri2 = Math.floor(pri2 * 1.30);
+            if (tier2 == 20) {pri2 = "SOLD OUT";}
+         }
+         else if (x == 3 && money >= pri3 && tier3 != 20) {
+            money = money - pri3; 
+            tier3++;
+            pri3 = Math.floor(pri3 * 1.30);
+            if (tier3 == 20) {pri3 = "SOLD OUT";}
+         }
+         else if (x == 4 && money >= pri4 && tier4 != 10) {
+            money = money - pri4; 
+            tier4++;
+            pri4 = Math.floor(pri1 * 1.45);
+            if (tier4 == 10) {pri4 = "SOLD OUT";}
+         }
+      }
+      
+      function seedUnlock() {
+         var s1 = false;
+         var s2 = false;
+         var s3 = false;
+         var s4 = false;
+         var s5 = false;
+         var s6 = false;
+         var s7 = false;
+         var s8 = false;
+         var s9 = false;
+         var s10 = false;
+         
+         var s1E = false;
+         
+         if (gac != true) {
+            if (tier4 <= 1) {
+               s1 = true;
+               s2 = false;
+               s3 = false;
+               s4 = false;
+               s5 = false;
+               s6 = false;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 2) {
+               s1 = true;
+               s2 = true;
+               s3 = false;
+               s4 = false;
+               s5 = false;
+               s6 = false;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 3) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = false;
+               s5 = false;
+               s6 = false;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 4) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = false;
+               s6 = false;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 5) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = false;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 6) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = true;
+               s7 = false;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 7) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = true;
+               s7 = true;
+               s8 = false;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 8) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = true;
+               s7 = true;
+               s8 = true;
+               s9 = false;
+               s10 = false;
+            }
+            else if (tier4 == 9) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = true;
+               s7 = true;
+               s8 = true;
+               s9 = true;
+               s10 = false;
+            }
+            else if (tier4 == 10) {
+               s1 = true;
+               s2 = true;
+               s3 = true;
+               s4 = true;
+               s5 = true;
+               s6 = true;
+               s7 = true;
+               s8 = true;
+               s9 = true;
+               s10 = true;
+            }
+         }
+         else {
+            s1 = true;
+            s2 = false;
+            s3 = false;
+            s4 = false;
+            s5 = false;
+            s6 = false;
+            s7 = false;
+            s8 = false;
+            s9 = false;
+            s10 = false;
+         }
+         
+         if (hasGoldenApple == true && gac != true) {s1E = true;}
+         
+         // Seed Packet I
+         if (s1 == true) {
+            document.getElementById("sp1").style.display = "block";
+            document.getElementById("buys1").style.display = "block";
+         }
+         else if (s1 == false) {
+            document.getElementById("sp1").style.display = "none";
+            document.getElementById("buys1").style.display = "none";
+         }
+         
+         // Seed Packet II
+         if (s2 == true) {
+            document.getElementById("sp2").style.display = "block";
+            document.getElementById("buys2").style.display = "block";
+         }
+         else if (s2 == false) {
+            document.getElementById("sp2").style.display = "none";
+            document.getElementById("buys2").style.display = "none";
+         }
+         
+         // Seed Packet III
+         if (s3 == true) {
+            document.getElementById("sp3").style.display = "block";
+            document.getElementById("buys3").style.display = "block";
+         }
+         else if (s3 == false) {
+            document.getElementById("sp3").style.display = "none";
+            document.getElementById("buys3").style.display = "none";
+         }
+         
+         // Seed Packet IV
+         if (s4 == true) {
+            document.getElementById("sp4").style.display = "block";
+            document.getElementById("buys4").style.display = "block";
+         }
+         else if (s4 == false) {
+            document.getElementById("sp4").style.display = "none";
+            document.getElementById("buys4").style.display = "none";
+         }
+         
+         // Seed Packet V
+         if (s5 == true) {
+            document.getElementById("sp5").style.display = "block";
+            document.getElementById("buys5").style.display = "block";
+         }
+         else if (s5 == false) {
+            document.getElementById("sp5").style.display = "none";
+            document.getElementById("buys5").style.display = "none";
+         }
+         
+         // Seed Packet VI
+         if (s6 == true) {
+            document.getElementById("sp6").style.display = "block";
+            document.getElementById("buys6").style.display = "block";
+         }
+         else if (s6 == false) {
+            document.getElementById("sp6").style.display = "none";
+            document.getElementById("buys6").style.display = "none";
+         }
+         
+         // Seed Packet VII
+         if (s7 == true) {
+            document.getElementById("sp7").style.display = "block";
+            document.getElementById("buys7").style.display = "block";
+         }
+         else if (s7 == false) {
+            document.getElementById("sp7").style.display = "none";
+            document.getElementById("buys7").style.display = "none";
+         }
+         
+         // Seed Packet VIII
+         if (s8 == true) {
+            document.getElementById("sp8").style.display = "block";
+            document.getElementById("buys8").style.display = "block";
+         }
+         else if (s8 == false) {
+            document.getElementById("sp8").style.display = "none";
+            document.getElementById("buys8").style.display = "none";
+         }
+         
+         // Seed Packet IX
+         if (s9 == true) {
+            document.getElementById("sp9").style.display = "block";
+            document.getElementById("buys9").style.display = "block";
+         }
+         else if (s9 == false) {
+            document.getElementById("sp9").style.display = "none";
+            document.getElementById("buys9").style.display = "none";
+         }
+         
+         // Seed Packet X
+         if (s10 == true) {
+            document.getElementById("sp10").style.display = "block";
+            document.getElementById("buys10").style.display = "block";
+         }
+         else if (s10 == false) {
+            document.getElementById("sp10").style.display = "none";
+            document.getElementById("buys10").style.display = "none";
+         }
+         
+         // Seed Packet Extra I
+         if (s1E == true) {
+            document.getElementById("sp1E").style.display = "block";
+            document.getElementById("buys1E").style.display = "block";
+         }
+         else if (s1E == false) {
+            document.getElementById("sp1E").style.display = "none";
+            document.getElementById("buys1E").style.display = "none";
+         }
+      }
+      
+      function updateShopItems(x) {
+         if (x == 1) {
+            var t = 'error'
+            if (tier1 == 1) {t = 'I';}
+            else if (tier1 == 2) {t = 'II';}
+            else if (tier1 == 3) {t = 'III';}
+            else if (tier1 == 4) {t = 'IV';}
+            else if (tier1 == 5) {t = 'V';}
+            else if (tier1 == 6) {t = 'VI';}
+            else if (tier1 == 7) {t = 'VII';}
+            else if (tier1 == 8) {t = 'VIII';}
+            else if (tier1 == 9) {t = 'IX';}
+            else if (tier1 == 10) {t = 'X';}
+            else if (tier1 == 11) {t = 'XI';}
+            else if (tier1 == 12) {t = 'XII';}
+            else if (tier1 == 13) {t = 'XIII';}
+            else if (tier1 == 14) {t = 'XIV';}
+            else if (tier1 == 15) {t = 'XV';}
+            else if (tier1 == 16) {t = 'XVI';}
+            else if (tier1 == 17) {t = 'XVII';}
+            else if (tier1 == 18) {t = 'XVIII';}
+            else if (tier1 == 19) {t = 'XIX';}
+            else if (tier1 == 20) {t = 'XX';}
+            document.getElementById("tier1").innerHTML = t;
+         }
+         else if (x == 2) {
+            var t = 'error'
+            if (tier2 == 1) {t = 'I';}
+            else if (tier2 == 2) {t = 'II';}
+            else if (tier2 == 3) {t = 'III';}
+            else if (tier2 == 4) {t = 'IV';}
+            else if (tier2 == 5) {t = 'V';}
+            else if (tier2 == 6) {t = 'VI';}
+            else if (tier2 == 7) {t = 'VII';}
+            else if (tier2 == 8) {t = 'VIII';}
+            else if (tier2 == 9) {t = 'IX';}
+            else if (tier2 == 10) {t = 'X';}
+            else if (tier2 == 11) {t = 'XI';}
+            else if (tier2 == 12) {t = 'XII';}
+            else if (tier2 == 13) {t = 'XIII';}
+            else if (tier2 == 14) {t = 'XIV';}
+            else if (tier2 == 15) {t = 'XV';}
+            else if (tier2 == 16) {t = 'XVI';}
+            else if (tier2 == 17) {t = 'XVII';}
+            else if (tier2 == 18) {t = 'XVIII';}
+            else if (tier2 == 19) {t = 'XIX';}
+            else if (tier2 == 20) {t = 'XX';}
+            document.getElementById("tier2").innerHTML = t;
+         }
+         else if (x == 3) {
+            var t = 'error'
+            if (tier3 == 1) {t = 'I';}
+            else if (tier3 == 2) {t = 'II';}
+            else if (tier3 == 3) {t = 'III';}
+            else if (tier3 == 4) {t = 'IV';}
+            else if (tier3 == 5) {t = 'V';}
+            else if (tier3 == 6) {t = 'VI';}
+            else if (tier3 == 7) {t = 'VII';}
+            else if (tier3 == 8) {t = 'VIII';}
+            else if (tier3 == 9) {t = 'IX';}
+            else if (tier3 == 10) {t = 'X';}
+            else if (tier3 == 11) {t = 'XI';}
+            else if (tier3 == 12) {t = 'XII';}
+            else if (tier3 == 13) {t = 'XIII';}
+            else if (tier3 == 14) {t = 'XIV';}
+            else if (tier3 == 15) {t = 'XV';}
+            else if (tier3 == 16) {t = 'XVI';}
+            else if (tier3 == 17) {t = 'XVII';}
+            else if (tier3 == 18) {t = 'XVIII';}
+            else if (tier3 == 19) {t = 'XIX';}
+            else if (tier3 == 20) {t = 'XX';}
+            document.getElementById("tier3").innerHTML = t;
+         }
+         else if (x == 4) {
+            var t = 'error'
+            if (tier4 == 1) {t = 'I';}
+            else if (tier4 == 2) {t = 'II';}
+            else if (tier4 == 3) {t = 'III';}
+            else if (tier4 == 4) {t = 'IV';}
+            else if (tier4 == 5) {t = 'V';}
+            else if (tier4 == 6) {t = 'VI';}
+            else if (tier4 == 7) {t = 'VII';}
+            else if (tier4 == 8) {t = 'VIII';}
+            else if (tier4 == 9) {t = 'IX';}
+            else if (tier4 == 10) {t = 'X';}
+            document.getElementById("tier4").innerHTML = t;
+         }
+      }
+      
+      function buySeedPacket(x) {
+         if (x == 'tomato' && money >= 1) {
+            seed1++;
+            money--;
+         }
+         else if (x == 'orange' && money >= 7) {
+            seed2++;
+            money = money - 7;
+         }
+         else if (x == 'melon' && money >= 15) {
+            seed3++;
+            money = money - 15;
+         }
+         else if (x == 'wheat' && money >= 25) {
+            seed4++;
+            money = money - 25;
+         }
+         else if (x == 'grapes' && money >= 65) {
+            seed5++;
+            money = money - 65;
+         }
+         else if (x == 'pine' && money >= 110) {
+            seed6++;
+            money = money - 110;
+         }
+         else if (x == 'bean' && money >= 210) {
+            seed7++;
+            money = money - 210;
+         }
+         else if (x == 'taba' && money >= 350) {
+            seed8++;
+            money = money - 350;
+         }
+         else if (x == 'cherry' && money >= 500) {
+            seed9++;
+            money = money - 500;
+         }
+         else if (x == 'star' && money >= 1000) {
+            seed10++;
+            money = money - 1000;
+         }
+         else if (x == 'gold' && money >= 350) {
+            seed1E++;
+            money = money - 3000;
+         }
+      }
+      
+      
+      function notify(txt, state) {
+         if (state == 'on') {
+            document.getElementById("notify").innerHTML = txt;
+            document.getElementById("notify").style.right = "2%";
+            setTimeout(notify, 3500, 'null', 'off');
+         }
+         else if (state == 'off') {
+            document.getElementById("notify").style.right = "-50%";
+         }
+      }
+      
+      document.getElementById("notify").style.right = "-50%";
+      
+      // Golden Apple Challenge
+      
+      var hasGoldenApple = false
+      var time = 1200
+      var gac = false
+      var moneyAT = 0
+      
+      var seed1H = 0
+      var seed2H = 0
+      var seed3H = 0
+      var seed4H = 0
+      var seed5H = 0
+      var seed6H = 0
+      var seed7H = 0
+      var seed8H = 0
+      var seed9H = 0
+      var seed10H = 0
+      var seed1EH = 0
+      
+      var plant1H = 0
+      var plant2H = 0
+      var plant3H = 0
+      var plant4H = 0
+      var plant5H = 0
+      var plant6H = 0
+      var plant7H = 0
+      var plant8H = 0
+      var plant9H = 0
+      var plant10H = 0
+      var plant1EH
+      
+      var moneyH = 0
+      
+      var tier1H = 0
+      var tier2H = 0
+      var tier3H = 0
+      var tier4H = 0
+      
+      document.getElementById("time").style.display = "none";
+      
+      function startGoldenAppleChallenge() {
+         if (gac == false) {
+            document.getElementById("time").style.display = "block";
+            // Variable Holds
+            seed1H = seed1;
+            seed2H = seed2;
+            seed3H = seed3;
+            seed4H = seed4;
+            seed5H = seed5;
+            seed6H = seed6;
+            seed7H = seed7;
+            seed8H = seed8;
+            seed9H = seed9;
+            seed10H = seed10;
+            seed1EH = seed1E;
+            plant1H = plant1;
+            plant2H = plant2;
+            plant3H = plant3;
+            plant4H = plant4;
+            plant5H = plant5;
+            plant6H = plant6;
+            plant7H = plant7;
+            plant8H = plant8;
+            plant9H = plant9;
+            plant10H = plant10;
+            plant1EH = plant1E;
+            moneyH = money;
+            tier1H = tier1;
+            tier2H = tier2;
+            tier3H = tier3;
+            tier4H = tier4;
+
+            // else
+
+            gac = true;
+            time = 2100;
+            
+            pot1 = '';
+            pot2 = '';
+            pot3 = '';
+            pot4 = '';
+
+            money = 0;
+            seed1 = 1;
+            seed2 = 0;
+            seed3 = 0;
+            seed4 = 0;
+            seed5 = 0;
+            seed6 = 0;
+            seed7 = 0;
+            plant1 = 0;
+            plant2 = 0;
+            plant3 = 0;
+            plant4 = 0;
+            plant5 = 0;
+            plant6 = 0;
+            plant7 = 0;
+            tier1 = 1;
+            tier2 = 1;
+            tier3 = 1;
+            tier4 = 1;
+            moneyAT = 9999;
+            
+            document.getElementById("gbT").innerHTML = "End";
+         }
+         else if (gac == true) {
+            goldenAppleEnd('quit');
+            document.getElementById("gbT").innerHTML = "Start";
+         }
+         document.getElementById("garden").style.display = "block";
+         document.getElementById("store").style.display = "none";
+         document.getElementById("seeds").style.display = "none";
+         document.getElementById("gapple").style.display = "none";
+      }
+      
+      function goldenAppleEnd(x) {
+         time = 1200;
+         moneyAT = 0;
+         gac = false;
+
+         money = moneyH;
+         seed1 = seed1H;
+         seed2 = seed2H;
+         seed3 = seed3H;
+         seed4 = seed4H;
+         seed5 = seed5H;
+         seed6 = seed6H;
+         seed7 = seed7H;
+         seed8 = seed8H;
+         seed9 = seed9H;
+         seed10 = seed10H
+         seed1E = seed1EH;
+         plant1 = plant1H;
+         plant2 = plant2H;
+         plant3 = plant3H;
+         plant4 = plant4H;
+         plant5 = plant5H;
+         plant6 = plant6H;
+         plant7 = plant7H;
+         plant8 = plant8H;
+         plant9 = plant9H;
+         plant10 = plant10H;
+         plant1E = plant1EH;
+         tier1 = tier1H;
+         tier2 = tier2H;
+         tier3 = tier3H;
+         tier4 = tier4H;
+         if (x == 'quit') {
+            document.getElementById("garden").style.display = "block";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+            
+            document.getElementById("gbT").innerHTML = "Start";
+         }
+         else if (x == 'fail') {
+            failedChallenges++;
+            document.getElementById("gacFailPopup").style.display = "block";
+            document.getElementById("garden").style.display = "none";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+            document.getElementById("gacEndPopup").style.display = "none";
+            
+            document.getElementById("gbT").innerHTML = "Start";
+         }
+         else if (x == 'end') {
+            document.getElementById("gacEndPopup").style.display = "block";
+            document.getElementById("garden").style.display = "none";
+            document.getElementById("store").style.display = "none";
+            document.getElementById("seeds").style.display = "none";
+            document.getElementById("gapple").style.display = "none";
+            
+            document.getElementById("gbT").innerHTML = "Start";
+         }
+         document.getElementById("time").innerHTML = "35:00";
+         document.getElementById("time").style.display = "none";
+      }
+      
+      document.getElementById("gacEndPopup").style.display = "none";
+      document.getElementById("gacFailPopup").style.display = "none";
+      
+      setInterval(function() {
+         if (gac == true) {
+            var storeReq = false
+            var timeReq = false
+            var moneyReq = false
+            
+            if (tier1 == 20 && tier2 == 20 && tier3 == 20 && tier4 == 10) {storeReq = true;}
+            if (time > 0) {timeReq = true;}
+            if (moneyAT >= 50000) {moneyReq = true;}
+            
+            // final tally
+            if (storeReq == true && timeReq == true && moneyReq == true) {
+               if (time <= 5) {justontime = true;}
+               hasGoldenApple = true;
+               gac = false;
+               notify('Challenge Completed!', 'on');
+               goldenAppleEnd('end');
+            }
+         }
+         
+      }, 100);
+      
+      var challengeunlocked = false
+      document.getElementById('chall').style.display = "none";
+      
+      setInterval(function() {
+         if (tier1 == 20 && tier2 == 20 && tier3 == 20 && tier4 == 10) {challengeunlocked = true;}
+         if (challengeunlocked == true) {document.getElementById('chall').style.display = "block";}
+      }, 1);
+      
+      var keyHandler = function (event) {
+         input(event.key);
+      };
+      document.addEventListener('keydown', keyHandler, false);
+      
+      document.getElementById("db").style.display = "none";
+      
+      var db = false
+      function input(key) {
+         if (key == '~' || key == '`') {
+            if (db == false) {
+               db = true;
+               document.getElementById("db").style.display = "block";
+               notify('Debug Enabled!', 'on');
+            }
+            else {
+               db = false;
+               document.getElementById("db").style.display = "none";
+               notify('Debug Disabled!', 'on');
+            }
+         }
+         else if (key == 'y') {
+            notify('Testing Notifications', 'on');
+         }
+         else if (key == 'Escape' && gameRunning == true) {
+            document.getElementById("pausebg").style.display = "block";
+            document.getElementById("pause").style.display = "block";
+         }
+      }
+      
+      document.getElementById("pausebg").style.display = "none";
+      document.getElementById("pause").style.display = "none";
+      
+      
+      function usePauseItem(picked) {
+         if (picked == 'resume') {
+            document.getElementById("pausebg").style.display = "none";
+            document.getElementById("pause").style.display = "none";
+         }
+         else if (picked == 'save') {
+            alert('ERROR: Saves have not been implemented yet! Try this feature again on a newer version.');
+         }
+         else if (picked == 'opt') {
+            document.getElementById("optm").style.display = "block";
+         }
+         else if (picked == 'achi') {
+            document.getElementById("am").style.display = "block";
+         }
+         else if (picked == 'exit') {
+            document.getElementById("pausebg").style.display = "none";
+            document.getElementById("pause").style.display = "none";
+            document.getElementById("mm").style.display = "block";
+            gameRunning = false;
+         }
+      }
+      
+      /*
+      Achievements:
+      
+      Tier I {
+         The beginning of Eden: Play the game for the first time
+         Rookie: Harvest your first plant
+         Just a hobby: Harvest ten plants
+         I'm too young to die!: Attempt to harvest a plant while it's still growing
+      }
+      
+      Tier II {
+         Challenged: Fail a challenge
+         Deathly long time: Don't harvest a plant for two whole minutes
+         The Magical Fruit: Have all pots contain beans
+         Green Gold: Have a plant be effected by gold leaf
+      }
+      
+      Tier III {
+         Millionaire: Get max HAGGLE
+         Early Bud: Harvest a plant in under half a second
+         Just in time: Finish a challenge with only five seconds remaining
+         Ask please: Click this achievement
+      }
+      
+      Tier IV {
+         Artifical Growths: Get tier X GROWTH
+         Midas Touch: Get max GOLDLEAF
+         Shimmering Fruit: Get the golden apple seed packet
+         Worth it's weight in gold (Weight in Gold): Sell a plant for over $10,000
+      }
+      
+      Tier V {
+         Green Thumb: Plant every type of plant
+         On Steriods: Get level XX growth
+         The end of Eden: Beat the entire game, all store items, challenges, everything.
+         Speedy Bastard (Deviously Speedy): Beat the game in under thirty minutes
+      }
+      
+      Hidden {
+         Cheat the cycle: enable cheats
+      }
+      */
+      
+      // other achievement variables
+      var harvested = 0
+      var killedPlant = false
+      var failedChallenges = 0
+      var plantdied = false
+      var goldleafeffects = 0
+      var fastharvest = false
+      var justontime = false
+      var achi34clicked = false
+      var plantsoldformuch = false
+      const timeReqForAchiV4 = 108000
+      
+      // variable functions
+      
+      function interaction34() {
+         achi34clicked = true;
+      }
+      
+      // tier I
+      var achiI1 = true
+      var achiI2 = false
+      var achiI3 = false
+      var achiI4 = false
+      // tier II
+      var achiII1 = false
+      var achiII2 = false
+      var achiII3 = false
+      var achiII4 = false
+      // tier III
+      var achiIII1 = false
+      var achiIII2 = false
+      var achiIII3 = false
+      var achiIII4 = false
+      // tier IV
+      var achiIV1 = false
+      var achiIV2 = false
+      var achiIV3 = false
+      var achiIV4 = false
+      // tier V
+      var achiV1 = false
+      var achiV2 = false
+      var achiV3 = false
+      var achiV4 = false
+      
+      function displayAchievement() {
+         if (achiI1 == true) {
+            document.getElementById("tierI1").innerHTML = "The Beginning of Eden";
+            document.getElementById("ac1").style.backgroundColor = "blue";
+         }
+         if (achiI2 == true) {
+            document.getElementById("tierI2").innerHTML = "Rookie";
+            document.getElementById("ac2").style.backgroundColor = "blue";
+         }
+         if (achiI3 == true) {
+            document.getElementById("tierI3").innerHTML = "Just a hobby";
+            document.getElementById("ac3").style.backgroundColor = "blue";
+         }
+         if (achiI4 == true) {
+            document.getElementById("tierI4").innerHTML = "I'm too young to die!";
+            document.getElementById("ac4").style.backgroundColor = "blue";
+         }
+         if (achiII1 == true) {
+            document.getElementById("tierII1").innerHTML = "Challenged";
+            document.getElementById("ac5").style.backgroundColor = "blue";
+         }
+         if (achiII2 == true) {
+            document.getElementById("tierII2").innerHTML = "Deathly long time";
+            document.getElementById("ac6").style.backgroundColor = "blue";
+         }
+         if (achiII3 == true) {
+            document.getElementById("tierII3").innerHTML = "The Magical Fruit";
+            document.getElementById("ac7").style.backgroundColor = "blue";
+         }
+         if (achiII4 == true) {
+            document.getElementById("tierII4").innerHTML = "Green Gold";
+            document.getElementById("ac8").style.backgroundColor = "blue";
+         }
+         if (achiIII1 == true) {
+            document.getElementById("tierIII1").innerHTML = "Millionare";
+            document.getElementById("ac9").style.backgroundColor = "blue";
+         }
+         if (achiIII2 == true) {
+            document.getElementById("tierIII2").innerHTML = "Early Bud";
+            document.getElementById("ac10").style.backgroundColor = "blue";
+         }
+         if (achiIII3 == true) {
+            document.getElementById("tierIII3").innerHTML = "Just in time";
+            document.getElementById("ac11").style.backgroundColor = "blue";
+         }
+         if (achiIII4 == true) {
+            document.getElementById("tierIII4").innerHTML = "Thanks for asking";
+            document.getElementById("ac12").style.backgroundColor = "blue";
+         }
+         if (achiIV1 == true) {
+            document.getElementById("tierIV1").innerHTML = "Artifical Growths";
+            document.getElementById("ac13").style.backgroundColor = "blue";
+         }
+         if (achiIV2 == true) {
+            document.getElementById("tierIV2").innerHTML = "Midas Touch";
+            document.getElementById("ac14").style.backgroundColor = "blue";
+         }
+         if (achiIV3 == true) {
+            document.getElementById("tierIV3").innerHTML = "Shimmering Fruit";
+            document.getElementById("ac15").style.backgroundColor = "blue";
+         }
+         if (achiIV4 == true) {
+            document.getElementById("tierIV4").innerHTML = "Weight in Gold";
+            document.getElementById("ac16").style.backgroundColor = "blue";
+         }
+         if (achiV1 == true) {
+            document.getElementById("tierV1").innerHTML = "Green Thumb";
+            document.getElementById("ac17").style.backgroundColor = "blue";
+         }
+         if (achiV2 == true) {
+            document.getElementById("tierV2").innerHTML = "On Steriods";
+            document.getElementById("ac18").style.backgroundColor = "blue";
+         }
+         if (achiV3 == true) {
+            document.getElementById("tierV3").innerHTML = "The end of Eden";
+            document.getElementById("ac19").style.backgroundColor = "blue";
+         }
+         if (achiV4 == true) {
+            document.getElementById("tierV4").innerHTML = "Deviously Speedy";
+            document.getElementById("ac20").style.backgroundColor = "blue";
+         }
+      }
+      
+      function checkAchievement() {
+         if (harvested >= 1 && achiI2 == false) {achiI2 = true; notify('Achievement Unlocked!', 'on');}
+         if (harvested >= 10 && achiI3 == false) {achiI3 = true; notify('Achievement Unlocked!', 'on');}
+         if (killedPlant == true && achiI4 == false) {achiI4 = true; notify('Achievement Unlocked!', 'on');}
+         if (failedChallenges >= 1 && achiII1 == false) {achiII1 = true; notify('Achievement Unlocked!', 'on');}
+         if (plantdied == true && achiII2 == false) {achiII2 = true; notify('Achievement Unlocked!', 'on');}
+         if (pot1 == 'bean_3' && pot2 == 'bean_3' && pot3 == 'bean_3' && pot4 == 'bean_3' && achiII3 == false) {achiII3 = true; notify('Achievement Unlocked!', 'on');}
+         if (goldleafeffects >= 1 && achiII4 == false) {achiII4 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier2 == 20 && achiIII1 == false) {achiIII1 = true; notify('Achievement Unlocked!', 'on');}
+         if (fastharvest == true && achiIII2 == false) {achiIII2 = true; notify('Achievement Unlocked!', 'on');}
+         if (justontime == true && achiIII3 == false) {achiIII3 = true; notify('Achievement Unlocked!', 'on');}
+         if (achi34clicked == true && achiIII4 == false) {achiIII4 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier1 >= 10 && achiIV1 == false) {achiIV1 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier3 == 20 && achiIV2 == false) {achiIV2 = true; notify('Achievement Unlocked!', 'on');}
+         if (hasGoldenApple == true && achiIV3 == false) {achiIV3 = true; notify('Achievement Unlocked!', 'on');}
+         if (plantsoldformuch == true && achiIV4 == false) {achiIV4 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier4 == 10 && hasGoldenApple == true && achiV1 == false) {achiV1 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier1 == 20 && achiV2 == false) {achiV2 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier1 == 20 && tier2 == 20 && tier3 == 20 && tier4 == 20 && hasGoldenApple == true && achiV3 == false) {achiV3 = true; notify('Achievement Unlocked!', 'on');}
+         if (tier1 == 20 && tier2 == 20 && tier3 == 20 && tier4 == 20 && hasGoldenApple == true && saveTime < timeReqForAchiV4 && achiV4 == false) {achiV4 = true; notify('Achievement Unlocked!', 'on');}
+      }
+      
+      setInterval(function() {
+         checkAchievement();
+         displayAchievement();
+      }, 1);
+      
+      
+      // MENU ////////////////////
+      
+      document.getElementById("am").style.display = "none";
+      document.getElementById("optm").style.display = "none";
+      
+      function useMenuItem(menu) {
+         if (menu == 'newgame' || menu == 'continue') {
+            document.getElementById("mm").style.display = "none";
+            gameRunning = true;
+         }
+         else if (menu == 'options') {
+            document.getElementById("optm").style.display = "block";
+         }
+         else if (menu == 'medals') {
+            document.getElementById("am").style.display = "block";
+         }
+         else if (menu == 'back') {
+            document.getElementById("am").style.display = "none";
+            document.getElementById("optm").style.display = "none";
+         }
+         else {
+            alert('error');
+         }
+      }
+      
+      // placeholder save stuff
+      var saveTime = 0
+      
+      setInterval(function() {
+         if (gameRunning == true) {saveTime++;}
+      }, 1000);
+      
+      
+      function debugInter(a) {
+         if (a == 'al1') {
+            tier4 = 10;
+            hasGoldenApple = true;
+         }
+         else if (a == 'al2') {
+            achiI1 = true;
+            achiI2 = true;
+            achiI3 = true;
+            achiI4 = true;
+            achiII1 = true;
+            achiII2 = true;
+            achiII3 = true;
+            achiII4 = true;
+            achiIII1 = true;
+            achiIII2 = true;
+            achiIII3 = true;
+            achiIII4 = true;
+            achiIV1 = true;
+            achiIV2 = true;
+            achiIV3 = true;
+            achiIV4 = true;
+            achiV1 = true;
+            achiV2 = true;
+            achiV3 = true;
+            achiV4 = true;
+         }
+         else if (a == 'al3') {money++;}
+         else if (a == 'al4') {money = money * 2;}
+         else if (a == 'al5') {money = max$;}
+         else if (a == 'al6') {
+            seed1++;
+            seed2++;
+            seed3++;
+            seed4++;
+            seed5++;
+            seed6++;
+            seed7++;
+            seed8++;
+            seed9++;
+            seed10++;
+            seed1E++;
+         }
+         
+         else if (a == 'sp1') {tier1 == 20;}
+         else if (a == 'sp2') {superspeed = true;}
+         
+         else if (a == 'ac1') {harvested++;}
+         else if (a == 'ac2') {killedPlant = true;}
+         else if (a == 'ac3') {failedChallenges++;}
+         else if (a == 'ac4') {plantdied = true;}
+         else if (a == 'ac5') {goldleafeffects++;}
+         else if (a == 'ac6') {fastharvest = true;}
+         else if (a == 'ac7') {justontime = true;}
+         else if (a == 'ac8') {achi34clicked = true;}
+         else if (a == 'ac9') {plantsoldformuch = true;}
+      }
+      
+      /*
+      Things that are needed to be changed when saving is added:
+      - Change the save time variable for Achievement V-4 to the new version
+      */
+   </script>
+</html> <!-- Last Checked: 3205 - NEW RECORD - -->
